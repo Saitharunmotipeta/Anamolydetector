@@ -7,6 +7,7 @@ Log Analyzer – Execution & Usage Guide
 Clone the repository
 
 -git clone <your-repo-url>
+
 -cd log-analyzer
 
 Install all dependencies
@@ -16,11 +17,13 @@ Install all dependencies
 Create .env file inside backend folder
 
 -DATABASE_URL=postgresql://postgres:password@localhost:5432/loganalyzer
+
 -OPENROUTER_API_KEY=your_openrouter_api_key
 
 Generate realistic dataset (2000+ logs)
 
 -cd data/raw
+
 -python generate_logs.py
 
 Start the FastAPI server
