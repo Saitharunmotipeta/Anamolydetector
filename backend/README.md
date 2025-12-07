@@ -22,6 +22,8 @@ Generate realistic dataset (2000+ logs)
 
           -cd data/raw
           -python generate_logs.py
+          -cd ..
+          -cd backend
 
 Start the FastAPI server
 
