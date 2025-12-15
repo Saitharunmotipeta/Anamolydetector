@@ -1,0 +1,1000 @@
+2025-12-15T11:02:08Z INFO /ops/diagnostics 200 0.013 192.168.55.12 - System diagnostics triggered
+2025-12-15T11:02:48Z INFO /telemetry/ingest 200 0.067 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:02:01Z INFO /api/login 200 0.102 127.0.0.1 - Login OK
+2025-12-15T11:01:59Z INFO /sensor/upload 200 0.049 192.168.55.12 - Gyro data packet received
+2025-12-15T11:02:14Z INFO /sensor/upload 200 0.056 172.20.5.20 - Gyro data packet received
+2025-12-15T11:02:19Z INFO /sensor/upload 200 0.146 10.30.0.12 - Gyro data packet received
+2025-12-15T11:02:52Z INFO /crew/status 200 0.085 172.16.9.20 - Crew heartbeats OK
+2025-12-15T11:02:41Z INFO /telemetry/ingest 200 0.195 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:03:40Z ERROR /api/login 400 0.146 172.20.5.20 - Invalid operator PIN
+2025-12-15T11:03:18Z INFO /api/login 200 0.017 172.31.8.90 - Login OK
+2025-12-15T11:03:42Z INFO /api/search 200 0.183 172.31.8.90 - Search OK
+2025-12-15T11:03:03Z INFO /compute/node 200 0.001 10.21.7.8 - GPU batch processed
+2025-12-15T11:03:56Z INFO /telemetry/ingest 200 0.019 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:03:22Z INFO /proc/fuel 200 0.182 172.31.8.90 - Fuel telemetry OK
+2025-12-15T11:03:08Z INFO /telemetry/ingest 200 0.170 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:03:01Z INFO /api/login 200 0.038 192.168.1.10 - Login OK
+2025-12-15T11:03:37Z INFO /api/login 200 0.212 192.168.55.12 - Login OK
+2025-12-15T11:03:30Z INFO /api/search 200 0.179 127.0.0.1 - Search OK
+2025-12-15T11:03:56Z INFO /api/login 200 0.152 10.30.0.12 - Login OK
+2025-12-15T11:03:08Z INFO /crew/status 200 0.109 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:03:00Z INFO /api/search 200 0.026 127.0.0.1 - Search OK
+2025-12-15T11:03:23Z INFO /telemetry/ingest 200 0.103 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:03:05Z INFO /sensor/upload 200 0.137 192.168.55.12 - Gyro data packet received
+2025-12-15T11:03:00Z INFO /api/search 200 0.161 172.20.5.20 - Search OK
+2025-12-15T11:03:04Z INFO /telemetry/ingest 200 0.233 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:03:01Z INFO /sensor/upload 200 0.064 10.21.7.8 - Gyro data packet received
+2025-12-15T11:03:45Z INFO /api/search 200 0.112 10.21.3.4 - Search OK
+2025-12-15T11:03:02Z INFO /crew/status 200 0.212 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:03:19Z INFO /api/login 200 0.139 10.0.0.100 - Login OK
+2025-12-15T11:03:55Z INFO /api/login 200 0.175 172.31.8.90 - Login OK
+2025-12-15T11:03:55Z INFO /sensor/upload 200 0.012 10.21.7.8 - Gyro data packet received
+2025-12-15T11:03:46Z INFO /api/search 200 0.088 192.168.55.12 - Search OK
+2025-12-15T11:03:39Z INFO /compute/node 200 0.143 10.21.7.8 - GPU batch processed
+2025-12-15T11:03:25Z INFO /telemetry/ingest 200 0.194 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:03:01Z INFO /telemetry/ingest 200 0.140 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:03:39Z INFO /ops/delete-task 200 0.057 172.31.8.90 - Task purge requested
+2025-12-15T11:03:38Z INFO /api/login 200 0.099 10.21.7.8 - Login OK
+2025-12-15T11:03:09Z INFO /api/search 200 0.081 172.16.9.20 - Search OK
+2025-12-15T11:03:11Z INFO /telemetry/ingest 200 0.026 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:03:52Z INFO /api/search 200 0.186 127.0.0.1 - Search OK
+2025-12-15T11:03:11Z INFO /telemetry/ingest 200 0.037 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:03:11Z INFO /crew/status 200 0.235 127.0.0.1 - Crew heartbeats OK
+2025-12-15T11:03:57Z INFO /telemetry/ingest 200 0.071 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:03:30Z INFO /crew/status 200 0.127 127.0.0.1 - Crew heartbeats OK
+2025-12-15T11:03:15Z INFO /api/search 200 0.084 10.30.0.12 - Search OK
+2025-12-15T11:03:52Z INFO /telemetry/ingest 200 0.168 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:03:25Z INFO /api/login 200 0.128 192.168.55.12 - Login OK
+2025-12-15T11:03:29Z INFO /telemetry/ingest 200 0.061 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:04:14Z INFO /api/search 200 0.133 10.21.3.4 - Search OK
+2025-12-15T11:04:57Z INFO /api/search 200 0.199 192.168.55.12 - Search OK
+2025-12-15T11:04:26Z INFO /sensor/upload 200 0.089 172.31.8.90 - Gyro data packet received
+2025-12-15T11:04:05Z INFO /ops/diagnostics 200 0.037 172.20.5.20 - System diagnostics triggered
+2025-12-15T11:03:58Z INFO /sensor/upload 200 0.132 172.16.9.20 - Gyro data packet received
+2025-12-15T11:04:23Z INFO /compute/node 200 0.134 192.168.1.10 - GPU batch processed
+2025-12-15T11:04:14Z INFO /crew/status 200 0.054 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:04:23Z INFO /telemetry/ingest 200 0.036 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:04:45Z ERROR /sensor/upload 502 4.881 10.0.0.100 - Sudden spike in latency
+2025-12-15T11:03:58Z INFO /telemetry/ingest 200 0.127 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:04:54Z INFO /telemetry/ingest 200 0.095 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:04:06Z INFO /telemetry/ingest 200 0.179 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:04:54Z INFO /compute/node 200 0.065 172.31.8.90 - GPU batch processed
+2025-12-15T11:04:53Z INFO /telemetry/ingest 200 0.107 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:05:07Z INFO /telemetry/ingest 200 0.086 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:05:53Z INFO /api/search 200 0.098 192.168.55.12 - Search OK
+2025-12-15T11:05:51Z INFO /ops/delete-task 200 0.042 192.168.55.12 - Task purge requested
+2025-12-15T11:05:41Z INFO /telemetry/ingest 200 0.069 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:05:54Z ERROR /telemetry/ingest 500 3.701 192.168.55.12 - Lost sync / Relay timeout
+2025-12-15T11:05:38Z INFO /telemetry/ingest 200 0.084 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:05:47Z INFO /proc/fuel 200 0.153 172.16.9.20 - Fuel telemetry OK
+2025-12-15T11:05:56Z INFO /telemetry/ingest 200 0.165 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:05:39Z INFO /api/search 200 0.116 172.31.8.90 - Search OK
+2025-12-15T11:05:00Z INFO /api/login 200 0.184 172.16.9.20 - Login OK
+2025-12-15T11:05:42Z INFO /sensor/upload 200 0.107 10.0.0.100 - Gyro data packet received
+2025-12-15T11:05:18Z INFO /api/search 200 0.097 10.21.3.4 - Search OK
+2025-12-15T11:05:33Z INFO /sensor/upload 200 0.063 172.20.5.20 - Gyro data packet received
+2025-12-15T11:05:44Z INFO /telemetry/ingest 200 0.266 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:05:09Z INFO /api/login 200 0.120 10.0.0.100 - Login OK
+2025-12-15T11:05:15Z INFO /compute/node 200 0.100 172.16.9.20 - GPU batch processed
+2025-12-15T11:05:02Z INFO /telemetry/ingest 200 0.077 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:04:58Z INFO /crew/status 200 0.217 172.20.5.20 - Crew heartbeats OK
+2025-12-15T11:05:43Z INFO /sensor/upload 200 0.230 10.30.0.12 - Gyro data packet received
+2025-12-15T11:05:34Z INFO /compute/node 200 0.076 172.31.8.90 - GPU batch processed
+2025-12-15T11:05:23Z INFO /ops/delete-task 200 0.118 172.31.8.90 - Task purge requested
+2025-12-15T11:05:49Z INFO /api/login 200 0.008 172.20.5.20 - Login OK
+2025-12-15T11:05:51Z INFO /api/search 200 0.052 10.21.7.8 - Search OK
+2025-12-15T11:05:43Z INFO /telemetry/ingest 200 0.136 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:05:06Z INFO /crew/status 200 0.025 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:05:38Z INFO /telemetry/ingest 200 0.180 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:05:37Z INFO /compute/node 200 0.110 127.0.0.1 - GPU batch processed
+2025-12-15T11:05:24Z INFO /telemetry/ingest 200 0.057 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:05:27Z INFO /telemetry/ingest 200 0.164 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:05:23Z INFO /compute/node 200 0.017 192.168.55.12 - GPU batch processed
+2025-12-15T11:05:16Z INFO /ops/delete-task 200 0.168 172.20.5.20 - Task purge requested
+2025-12-15T11:05:48Z INFO /api/search 200 0.221 10.21.3.4 - Search OK
+2025-12-15T11:05:16Z INFO /compute/node 200 0.074 192.168.1.10 - GPU batch processed
+2025-12-15T11:05:49Z INFO /api/login 200 0.118 10.30.0.12 - Login OK
+2025-12-15T11:05:39Z INFO /telemetry/ingest 200 0.143 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:05:19Z INFO /ops/delete-task 200 0.156 10.30.0.12 - Task purge requested
+2025-12-15T11:06:04Z INFO /telemetry/ingest 200 0.131 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:06:36Z INFO /api/search 200 0.060 127.0.0.1 - Search OK
+2025-12-15T11:05:58Z INFO /sensor/upload 200 0.210 10.0.0.100 - Gyro data packet received
+2025-12-15T11:06:17Z INFO /telemetry/ingest 200 0.033 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:06:21Z INFO /compute/node 200 0.148 172.20.5.20 - GPU batch processed
+2025-12-15T11:06:25Z INFO /api/login 200 0.006 172.31.8.90 - Login OK
+2025-12-15T11:06:12Z INFO /telemetry/ingest 200 0.017 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:06:38Z INFO /telemetry/ingest 200 0.169 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:06:09Z INFO /ops/delete-task 200 0.160 172.31.8.90 - Task purge requested
+2025-12-15T11:06:43Z ERROR /telemetry/ingest 500 3.804 10.0.0.100 - Sudden spike in latency
+2025-12-15T11:06:46Z INFO /telemetry/ingest 200 0.044 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:06:56Z INFO /sensor/upload 200 0.155 127.0.0.1 - Gyro data packet received
+2025-12-15T11:06:34Z INFO /telemetry/ingest 200 0.041 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:06:13Z INFO /ops/delete-task 200 0.177 10.30.0.12 - Task purge requested
+2025-12-15T11:06:48Z INFO /telemetry/ingest 200 0.089 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:06:39Z INFO /api/login 200 0.091 172.20.5.20 - Login OK
+2025-12-15T11:06:06Z INFO /sensor/upload 200 0.063 10.21.3.4 - Gyro data packet received
+2025-12-15T11:06:05Z ERROR /ops/diagnostics 500 3.989 10.30.0.12 - Sudden spike in latency
+2025-12-15T11:06:00Z INFO /api/search 200 0.107 192.168.1.10 - Search OK
+2025-12-15T11:06:37Z INFO /telemetry/ingest 200 0.149 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:06:04Z INFO /compute/node 200 0.220 172.20.5.20 - GPU batch processed
+2025-12-15T11:06:48Z INFO /api/search 200 0.011 10.21.3.4 - Search OK
+2025-12-15T11:06:43Z INFO /compute/node 200 0.119 172.20.5.20 - GPU batch processed
+2025-12-15T11:06:56Z INFO /crew/status 200 0.208 127.0.0.1 - Crew heartbeats OK
+2025-12-15T11:06:18Z INFO /telemetry/ingest 200 0.183 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:06:55Z INFO /api/search 200 0.189 10.30.0.12 - Search OK
+2025-12-15T11:06:54Z INFO /sensor/upload 200 0.070 10.30.0.12 - Gyro data packet received
+2025-12-15T11:06:38Z INFO /telemetry/ingest 200 0.119 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:06:37Z INFO /compute/node 200 0.135 172.20.5.20 - GPU batch processed
+2025-12-15T11:06:22Z INFO /api/search 200 0.062 172.31.8.90 - Search OK
+2025-12-15T11:06:15Z INFO /api/search 200 0.129 127.0.0.1 - Search OK
+2025-12-15T11:06:41Z INFO /crew/status 200 0.020 172.16.9.20 - Crew heartbeats OK
+2025-12-15T11:06:19Z INFO /proc/fuel 200 0.122 172.16.9.20 - Fuel telemetry OK
+2025-12-15T11:06:09Z INFO /telemetry/ingest 200 0.016 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:06:29Z INFO /telemetry/ingest 200 0.092 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:06:30Z INFO /compute/node 200 0.156 192.168.1.10 - GPU batch processed
+2025-12-15T11:06:35Z INFO /api/login 200 0.205 10.21.3.4 - Login OK
+2025-12-15T11:06:29Z INFO /api/login 200 0.020 172.16.9.20 - Login OK
+2025-12-15T11:06:21Z INFO /telemetry/ingest 200 0.192 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:06:53Z INFO /api/search 200 0.245 10.21.3.4 - Search OK
+2025-12-15T11:06:08Z INFO /api/search 200 0.099 192.168.1.10 - Search OK
+2025-12-15T11:05:59Z INFO /api/login 200 0.188 172.31.8.90 - Login OK
+2025-12-15T11:06:47Z INFO /sensor/upload 200 0.169 192.168.1.10 - Gyro data packet received
+2025-12-15T11:06:16Z INFO /crew/status 200 0.220 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:06:49Z INFO /telemetry/ingest 200 0.094 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:07:25Z INFO /api/search 200 0.246 192.168.55.12 - Search OK
+2025-12-15T11:07:21Z INFO /telemetry/ingest 200 0.134 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:07:09Z INFO /api/search 200 0.101 192.168.55.12 - Search OK
+2025-12-15T11:07:08Z INFO /crew/status 200 0.154 172.16.9.20 - Crew heartbeats OK
+2025-12-15T11:07:52Z INFO /api/search 200 0.068 192.168.1.10 - Search OK
+2025-12-15T11:07:51Z INFO /sensor/upload 200 0.023 172.16.9.20 - Gyro data packet received
+2025-12-15T11:06:58Z INFO /compute/node 200 0.196 10.21.3.4 - GPU batch processed
+2025-12-15T11:07:39Z INFO /telemetry/ingest 200 0.072 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:07:37Z INFO /proc/fuel 200 0.019 10.21.7.8 - Fuel telemetry OK
+2025-12-15T11:07:25Z INFO /telemetry/ingest 200 0.241 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:07:34Z INFO /api/search 200 0.209 10.21.3.4 - Search OK
+2025-12-15T11:07:31Z INFO /api/login 200 0.047 192.168.55.12 - Login OK
+2025-12-15T11:07:16Z INFO /api/search 200 0.106 10.0.0.100 - Search OK
+2025-12-15T11:07:15Z INFO /telemetry/ingest 200 0.054 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:07:07Z ERROR /telemetry/ingest 500 3.846 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:06:59Z INFO /api/search 200 0.122 10.21.3.4 - Search OK
+2025-12-15T11:07:30Z INFO /api/search 200 0.164 127.0.0.1 - Search OK
+2025-12-15T11:07:07Z INFO /sensor/upload 200 0.145 172.20.5.20 - Gyro data packet received
+2025-12-15T11:07:15Z INFO /sensor/upload 200 0.257 127.0.0.1 - Gyro data packet received
+2025-12-15T11:08:06Z INFO /api/login 200 0.053 172.31.8.90 - Login OK
+2025-12-15T11:08:56Z INFO /sensor/upload 200 0.136 10.21.7.8 - Gyro data packet received
+2025-12-15T11:08:18Z INFO /telemetry/ingest 200 0.139 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:08:48Z INFO /telemetry/ingest 200 0.108 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:08:43Z INFO /api/search 200 0.077 10.21.7.8 - Search OK
+2025-12-15T11:08:00Z ERROR /ops/delete-task 500 3.071 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:08:20Z INFO /crew/status 200 0.175 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:08:29Z INFO /sensor/upload 200 0.148 10.21.3.4 - Gyro data packet received
+2025-12-15T11:08:45Z INFO /compute/node 200 0.115 127.0.0.1 - GPU batch processed
+2025-12-15T11:08:57Z INFO /api/search 200 0.173 172.20.5.20 - Search OK
+2025-12-15T11:08:51Z INFO /api/login 200 0.029 10.21.7.8 - Login OK
+2025-12-15T11:08:36Z INFO /api/search 200 0.179 172.31.8.90 - Search OK
+2025-12-15T11:08:53Z INFO /telemetry/ingest 200 0.080 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:08:47Z INFO /telemetry/ingest 200 0.030 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:08:45Z INFO /telemetry/ingest 200 0.056 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:08:56Z INFO /api/search 200 0.155 10.30.0.12 - Search OK
+2025-12-15T11:08:56Z INFO /sensor/upload 200 0.266 192.168.55.12 - Gyro data packet received
+2025-12-15T11:09:41Z INFO /compute/node 200 0.132 127.0.0.1 - GPU batch processed
+2025-12-15T11:09:12Z INFO /telemetry/ingest 200 0.150 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:09:31Z INFO /api/search 200 0.094 10.30.0.12 - Search OK
+2025-12-15T11:09:04Z INFO /crew/status 200 0.118 10.0.0.100 - Crew heartbeats OK
+2025-12-15T11:09:34Z INFO /api/search 200 0.077 172.16.9.20 - Search OK
+2025-12-15T11:09:32Z INFO /telemetry/ingest 200 0.145 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:09:40Z INFO /crew/status 200 0.086 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:09:50Z INFO /telemetry/ingest 200 0.126 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:09:09Z INFO /crew/status 200 0.121 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:09:46Z INFO /compute/node 200 0.108 192.168.55.12 - GPU batch processed
+2025-12-15T11:09:51Z INFO /telemetry/ingest 200 0.125 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:09:07Z INFO /telemetry/ingest 200 0.208 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:09:20Z INFO /sensor/upload 200 0.075 10.21.3.4 - Gyro data packet received
+2025-12-15T11:10:17Z INFO /api/login 200 0.044 172.16.9.20 - Login OK
+2025-12-15T11:10:55Z INFO /ops/delete-task 200 0.071 10.0.0.100 - Task purge requested
+2025-12-15T11:10:04Z INFO /sensor/upload 200 0.042 192.168.1.10 - Gyro data packet received
+2025-12-15T11:10:50Z INFO /telemetry/ingest 200 0.021 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:10:55Z INFO /compute/node 200 0.128 10.21.3.4 - GPU batch processed
+2025-12-15T11:10:36Z INFO /api/search 200 0.136 172.20.5.20 - Search OK
+2025-12-15T11:10:39Z INFO /api/login 200 0.008 172.20.5.20 - Login OK
+2025-12-15T11:10:57Z INFO /telemetry/ingest 200 0.209 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:10:29Z INFO /proc/fuel 200 0.170 192.168.55.12 - Fuel telemetry OK
+2025-12-15T11:10:40Z INFO /telemetry/ingest 200 0.083 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:10:20Z INFO /compute/node 200 0.061 10.0.0.100 - GPU batch processed
+2025-12-15T11:10:31Z INFO /crew/status 200 0.220 172.20.5.20 - Crew heartbeats OK
+2025-12-15T11:10:39Z INFO /ops/diagnostics 200 0.189 192.168.1.10 - System diagnostics triggered
+2025-12-15T11:10:49Z INFO /telemetry/ingest 200 0.204 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:10:07Z INFO /sensor/upload 200 0.057 172.16.9.20 - Gyro data packet received
+2025-12-15T11:10:55Z INFO /telemetry/ingest 200 0.103 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:10:18Z INFO /telemetry/ingest 200 0.146 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:10:08Z INFO /telemetry/ingest 200 0.192 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:10:51Z INFO /api/login 200 0.140 10.0.0.100 - Login OK
+2025-12-15T11:10:21Z INFO /proc/fuel 200 0.119 10.21.7.8 - Fuel telemetry OK
+2025-12-15T11:10:52Z ERROR /api/login 400 0.355 172.20.5.20 - Invalid operator PIN
+2025-12-15T11:10:11Z INFO /telemetry/ingest 200 0.098 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:10:56Z INFO /crew/status 200 0.137 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:10:00Z INFO /api/login 200 0.150 10.30.0.12 - Login OK
+2025-12-15T11:10:12Z INFO /sensor/upload 200 0.043 192.168.1.10 - Gyro data packet received
+2025-12-15T11:11:22Z INFO /sensor/upload 200 0.193 10.0.0.100 - Gyro data packet received
+2025-12-15T11:11:54Z INFO /api/login 200 0.040 127.0.0.1 - Login OK
+2025-12-15T11:11:42Z INFO /api/search 200 0.177 192.168.1.10 - Search OK
+2025-12-15T11:11:35Z INFO /api/search 200 0.145 172.20.5.20 - Search OK
+2025-12-15T11:11:21Z INFO /crew/status 200 0.184 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:11:30Z INFO /api/search 200 0.191 10.21.3.4 - Search OK
+2025-12-15T11:11:34Z INFO /compute/node 200 0.119 10.21.3.4 - GPU batch processed
+2025-12-15T11:12:05Z INFO /crew/status 200 0.099 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:12:43Z INFO /api/search 200 0.075 10.21.3.4 - Search OK
+2025-12-15T11:12:05Z INFO /relay/marslink 200 0.142 10.21.3.4 - Relay ok
+2025-12-15T11:12:07Z WARN /telemetry/ingest 429 2.697 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:12:34Z INFO /api/search 200 0.152 10.21.3.4 - Search OK
+2025-12-15T11:12:27Z INFO /sensor/upload 200 0.207 10.21.3.4 - Gyro data packet received
+2025-12-15T11:12:20Z INFO /crew/status 200 0.120 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:12:06Z INFO /api/search 200 0.146 10.21.3.4 - Search OK
+2025-12-15T11:12:40Z INFO /ops/delete-task 200 0.202 10.21.3.4 - Task purge requested
+2025-12-15T11:12:10Z INFO /ops/delete-task 200 0.055 10.21.3.4 - Task purge requested
+2025-12-15T11:12:03Z INFO /api/search 200 0.113 10.21.3.4 - Search OK
+2025-12-15T11:12:28Z INFO /api/search 200 0.152 10.21.3.4 - Search OK
+2025-12-15T11:12:53Z INFO /telemetry/ingest 200 0.135 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:12:16Z INFO /ops/diagnostics 200 0.160 10.21.3.4 - System diagnostics triggered
+2025-12-15T11:11:58Z INFO /api/login 200 0.064 10.21.3.4 - Login OK
+2025-12-15T11:12:56Z INFO /relay/marslink 200 0.144 10.21.3.4 - Relay ok
+2025-12-15T11:12:31Z ERROR /api/login 400 0.188 10.21.3.4 - Service down
+2025-12-15T11:12:00Z WARN /ops/diagnostics 200 2.275 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:12:31Z INFO /relay/marslink 200 0.134 10.21.3.4 - Relay ok
+2025-12-15T11:12:13Z INFO /crew/status 200 0.128 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:12:19Z INFO /api/search 200 0.029 10.21.3.4 - Search OK
+2025-12-15T11:12:56Z INFO /relay/marslink 200 0.144 172.16.9.20 - Relay ok
+2025-12-15T11:12:45Z INFO /api/search 200 0.030 192.168.1.10 - Search OK
+2025-12-15T11:12:38Z INFO /telemetry/ingest 200 0.063 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:12:57Z ERROR /telemetry/ingest 400 2.910 172.31.8.90 - Lost sync / Relay timeout
+2025-12-15T11:12:31Z ERROR /telemetry/ingest 400 2.178 10.0.0.100 - Lost sync / Relay timeout
+2025-12-15T11:12:04Z INFO /api/search 200 0.184 172.16.9.20 - Search OK
+2025-12-15T11:12:18Z INFO /telemetry/ingest 200 0.176 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:12:35Z INFO /telemetry/ingest 200 0.121 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:11:58Z INFO /api/login 200 0.106 192.168.55.12 - Login OK
+2025-12-15T11:12:19Z INFO /api/search 200 0.183 127.0.0.1 - Search OK
+2025-12-15T11:12:13Z INFO /compute/node 200 0.113 172.16.9.20 - GPU batch processed
+2025-12-15T11:12:22Z INFO /telemetry/ingest 200 0.021 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:12:16Z INFO /compute/node 200 0.101 172.31.8.90 - GPU batch processed
+2025-12-15T11:12:38Z ERROR /telemetry/ingest 500 3.871 192.168.1.10 - Lost sync / Relay timeout
+2025-12-15T11:12:37Z INFO /telemetry/ingest 200 0.101 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:12:01Z INFO /telemetry/ingest 200 0.057 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:12:28Z INFO /sensor/upload 200 0.222 172.20.5.20 - Gyro data packet received
+2025-12-15T11:12:49Z INFO /compute/node 200 0.101 10.30.0.12 - GPU batch processed
+2025-12-15T11:12:13Z INFO /api/search 200 0.175 10.21.3.4 - Search OK
+2025-12-15T11:12:43Z INFO /telemetry/ingest 200 0.122 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:12:13Z INFO /api/search 200 0.014 192.168.1.10 - Search OK
+2025-12-15T11:12:33Z INFO /crew/status 200 0.044 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:12:20Z INFO /telemetry/ingest 200 0.213 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:12:00Z INFO /api/search 200 0.082 10.21.7.8 - Search OK
+2025-12-15T11:12:23Z INFO /compute/node 200 0.162 10.21.7.8 - GPU batch processed
+2025-12-15T11:12:48Z INFO /api/search 200 0.117 10.21.7.8 - Search OK
+2025-12-15T11:12:21Z INFO /relay/marslink 200 0.106 10.21.7.8 - Relay ok
+2025-12-15T11:12:49Z INFO /telemetry/ingest 200 0.197 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:15Z INFO /api/search 200 0.169 172.20.5.20 - Search OK
+2025-12-15T11:12:48Z INFO /api/search 200 0.253 172.16.9.20 - Search OK
+2025-12-15T11:12:15Z INFO /telemetry/ingest 200 0.106 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:12:03Z ERROR /telemetry/ingest 500 3.690 10.21.7.8 - Lost sync / Relay timeout
+2025-12-15T11:12:12Z INFO /api/search 200 0.181 192.168.1.10 - Search OK
+2025-12-15T11:12:41Z ERROR /api/login 500 0.446 10.30.0.12 - Invalid operator PIN
+2025-12-15T11:12:44Z INFO /api/login 200 0.143 172.16.9.20 - Login OK
+2025-12-15T11:12:54Z INFO /api/login 200 0.166 172.16.9.20 - Login OK
+2025-12-15T11:12:11Z INFO /telemetry/ingest 200 0.168 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:29Z INFO /sensor/upload 200 0.118 172.20.5.20 - Gyro data packet received
+2025-12-15T11:12:09Z INFO /crew/status 200 0.114 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:12:26Z INFO /crew/status 200 0.103 127.0.0.1 - Crew heartbeats OK
+2025-12-15T11:12:23Z INFO /relay/marslink 200 0.064 10.21.7.8 - Relay ok
+2025-12-15T11:12:28Z INFO /crew/status 200 0.016 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:12:18Z INFO /telemetry/ingest 200 0.087 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:01Z INFO /telemetry/ingest 200 0.076 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:12:38Z INFO /api/login 200 0.063 172.16.9.20 - Login OK
+2025-12-15T11:12:47Z WARN /api/login 400 2.749 192.168.55.12 - Sudden spike in latency
+2025-12-15T11:12:02Z INFO /api/search 200 0.141 172.16.9.20 - Search OK
+2025-12-15T11:12:27Z INFO /telemetry/ingest 200 0.043 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:17Z INFO /api/search 200 0.111 10.30.0.12 - Search OK
+2025-12-15T11:11:58Z INFO /telemetry/ingest 200 0.124 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:12:51Z INFO /proc/fuel 200 0.087 127.0.0.1 - Fuel telemetry OK
+2025-12-15T11:12:13Z INFO /api/search 200 0.122 192.168.1.10 - Search OK
+2025-12-15T11:12:07Z INFO /sensor/upload 200 0.143 10.30.0.12 - Gyro data packet received
+2025-12-15T11:12:55Z INFO /api/login 200 0.064 10.21.3.4 - Login OK
+2025-12-15T11:12:23Z INFO /api/search 200 0.069 127.0.0.1 - Search OK
+2025-12-15T11:12:27Z INFO /api/search 200 0.113 172.16.9.20 - Search OK
+2025-12-15T11:12:02Z INFO /ops/diagnostics 200 0.149 10.21.3.4 - System diagnostics triggered
+2025-12-15T11:12:57Z INFO /relay/marslink 200 0.058 10.21.7.8 - Relay ok
+2025-12-15T11:12:00Z INFO /api/login 200 0.165 192.168.1.10 - Login OK
+2025-12-15T11:12:44Z INFO /sensor/upload 200 0.009 172.16.9.20 - Gyro data packet received
+2025-12-15T11:12:55Z INFO /telemetry/ingest 200 0.193 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:12:52Z INFO /telemetry/ingest 200 0.165 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:12:05Z INFO /ops/delete-task 200 0.200 172.31.8.90 - Task purge requested
+2025-12-15T11:12:43Z ERROR /api/login 500 0.404 172.20.5.20 - Service down
+2025-12-15T11:12:00Z INFO /sensor/upload 200 0.066 172.20.5.20 - Gyro data packet received
+2025-12-15T11:12:52Z INFO /compute/node 200 0.136 10.0.0.100 - GPU batch processed
+2025-12-15T11:12:20Z INFO /telemetry/ingest 200 0.015 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:04Z INFO /sensor/upload 200 0.242 192.168.55.12 - Gyro data packet received
+2025-12-15T11:12:57Z INFO /sensor/upload 200 0.165 192.168.1.10 - Gyro data packet received
+2025-12-15T11:12:24Z INFO /crew/status 200 0.056 172.16.9.20 - Crew heartbeats OK
+2025-12-15T11:12:31Z INFO /telemetry/ingest 200 0.228 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:12:19Z INFO /compute/node 200 0.122 172.16.9.20 - GPU batch processed
+2025-12-15T11:12:12Z WARN /api/login 429 1.560 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:12:28Z INFO /ops/diagnostics 200 0.171 10.30.0.12 - System diagnostics triggered
+2025-12-15T11:12:36Z INFO /api/login 200 0.007 192.168.1.10 - Login OK
+2025-12-15T11:12:24Z INFO /sensor/upload 200 0.087 172.20.5.20 - Gyro data packet received
+2025-12-15T11:12:46Z INFO /telemetry/ingest 200 0.142 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:41Z INFO /telemetry/ingest 200 0.175 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:13Z INFO /sensor/upload 200 0.025 192.168.55.12 - Gyro data packet received
+2025-12-15T11:12:10Z INFO /crew/status 200 0.107 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:12:49Z INFO /telemetry/ingest 200 0.026 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:12:00Z INFO /sensor/upload 200 0.009 10.30.0.12 - Gyro data packet received
+2025-12-15T11:12:13Z INFO /telemetry/ingest 200 0.139 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:12:24Z INFO /telemetry/ingest 200 0.020 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:12:29Z INFO /sensor/upload 200 0.067 172.31.8.90 - Gyro data packet received
+2025-12-15T11:12:26Z INFO /crew/status 200 0.119 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:12:48Z INFO /api/login 200 0.205 10.21.7.8 - Login OK
+2025-12-15T11:12:19Z INFO /api/search 200 0.033 192.168.55.12 - Search OK
+2025-12-15T11:12:48Z INFO /telemetry/ingest 200 0.125 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:12:11Z INFO /api/search 200 0.134 10.21.3.4 - Search OK
+2025-12-15T11:12:20Z INFO /api/search 200 0.139 10.21.3.4 - Search OK
+2025-12-15T11:12:20Z INFO /ops/delete-task 200 0.073 10.0.0.100 - Task purge requested
+2025-12-15T11:12:09Z INFO /telemetry/ingest 200 0.114 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:12:35Z INFO /crew/status 200 0.115 10.30.0.12 - Crew heartbeats OK
+2025-12-15T11:12:39Z INFO /telemetry/ingest 200 0.164 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:12:25Z INFO /ops/diagnostics 200 0.135 10.21.7.8 - System diagnostics triggered
+2025-12-15T11:12:43Z INFO /telemetry/ingest 200 0.122 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:12:46Z INFO /api/search 200 0.159 192.168.55.12 - Search OK
+2025-12-15T11:12:45Z INFO /telemetry/ingest 200 0.238 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:12:04Z INFO /api/login 200 0.087 10.21.3.4 - Login OK
+2025-12-15T11:12:40Z INFO /crew/status 200 0.091 172.16.9.20 - Crew heartbeats OK
+2025-12-15T11:12:33Z INFO /ops/diagnostics 200 0.113 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:13:28Z INFO /api/login 200 0.035 10.21.3.4 - Login OK
+2025-12-15T11:13:46Z INFO /compute/node 200 0.145 10.21.3.4 - GPU batch processed
+2025-12-15T11:13:41Z ERROR /api/login 400 0.231 10.21.3.4 - Invalid operator PIN
+2025-12-15T11:13:20Z INFO /api/login 200 0.133 10.21.3.4 - Login OK
+2025-12-15T11:13:29Z INFO /api/login 200 0.010 10.21.3.4 - Login OK
+2025-12-15T11:13:04Z INFO /telemetry/ingest 200 0.002 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:13:50Z INFO /api/login 200 0.182 10.21.3.4 - Login OK
+2025-12-15T11:12:58Z INFO /api/search 200 0.060 10.21.3.4 - Search OK
+2025-12-15T11:13:36Z INFO /api/search 200 0.081 10.21.3.4 - Search OK
+2025-12-15T11:13:47Z INFO /crew/status 200 0.043 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:13:44Z INFO /crew/status 200 0.172 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:13:01Z INFO /api/search 200 0.006 10.21.3.4 - Search OK
+2025-12-15T11:13:37Z INFO /telemetry/ingest 200 0.133 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:13:54Z INFO /api/search 200 0.042 10.21.3.4 - Search OK
+2025-12-15T11:13:01Z INFO /telemetry/ingest 200 0.191 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:13:43Z INFO /api/login 200 0.051 10.21.3.4 - Login OK
+2025-12-15T11:13:31Z INFO /telemetry/ingest 200 0.092 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:13:51Z INFO /compute/node 200 0.202 10.21.3.4 - GPU batch processed
+2025-12-15T11:13:38Z INFO /sensor/upload 200 0.122 10.21.3.4 - Gyro data packet received
+2025-12-15T11:13:01Z INFO /telemetry/ingest 200 0.162 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:13:19Z INFO /sensor/upload 200 0.173 172.31.8.90 - Gyro data packet received
+2025-12-15T11:13:01Z INFO /api/search 200 0.064 172.16.9.20 - Search OK
+2025-12-15T11:12:58Z INFO /api/login 200 0.283 10.21.3.4 - Login OK
+2025-12-15T11:13:39Z INFO /ops/diagnostics 200 0.115 192.168.55.12 - System diagnostics triggered
+2025-12-15T11:13:12Z ERROR /telemetry/ingest 400 4.550 10.21.3.4 - Lost sync / Relay timeout
+2025-12-15T11:13:56Z INFO /ops/diagnostics 200 0.037 10.21.3.4 - System diagnostics triggered
+2025-12-15T11:13:48Z INFO /telemetry/ingest 200 0.134 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:12:58Z INFO /ops/diagnostics 200 0.120 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:13:09Z INFO /api/login 200 0.179 10.21.3.4 - Login OK
+2025-12-15T11:13:25Z INFO /proc/fuel 200 0.060 192.168.1.10 - Fuel telemetry OK
+2025-12-15T11:13:15Z INFO /crew/status 200 0.131 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:13:36Z INFO /api/search 200 0.135 10.21.7.8 - Search OK
+2025-12-15T11:13:24Z INFO /sensor/upload 200 0.245 192.168.1.10 - Gyro data packet received
+2025-12-15T11:13:28Z INFO /api/search 200 0.033 10.21.3.4 - Search OK
+2025-12-15T11:12:59Z INFO /telemetry/ingest 200 0.033 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:13:02Z ERROR /api/login 502 0.234 172.31.8.90 - Service down
+2025-12-15T11:13:57Z INFO /ops/delete-task 200 0.160 10.0.0.100 - Task purge requested
+2025-12-15T11:13:51Z INFO /api/search 200 0.173 10.21.7.8 - Search OK
+2025-12-15T11:13:29Z INFO /sensor/upload 200 0.192 10.0.0.100 - Gyro data packet received
+2025-12-15T11:13:53Z INFO /crew/status 200 0.010 10.0.0.100 - Crew heartbeats OK
+2025-12-15T11:13:53Z INFO /telemetry/ingest 200 0.115 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:13:05Z INFO /sensor/upload 200 0.023 10.0.0.100 - Gyro data packet received
+2025-12-15T11:13:49Z INFO /api/login 200 0.039 10.21.3.4 - Login OK
+2025-12-15T11:13:38Z INFO /api/search 200 0.154 127.0.0.1 - Search OK
+2025-12-15T11:12:58Z INFO /ops/delete-task 200 0.035 192.168.1.10 - Task purge requested
+2025-12-15T11:13:30Z INFO /ops/delete-task 200 0.050 10.21.7.8 - Task purge requested
+2025-12-15T11:13:24Z INFO /telemetry/ingest 200 0.072 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:13:50Z WARN /telemetry/ingest 400 2.423 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:13:47Z INFO /api/login 200 0.290 10.21.7.8 - Login OK
+2025-12-15T11:13:50Z INFO /api/search 200 0.047 172.31.8.90 - Search OK
+2025-12-15T11:13:20Z INFO /sensor/upload 200 0.183 192.168.55.12 - Gyro data packet received
+2025-12-15T11:13:31Z INFO /compute/node 200 0.047 192.168.55.12 - GPU batch processed
+2025-12-15T11:13:34Z INFO /sensor/upload 200 0.126 10.30.0.12 - Gyro data packet received
+2025-12-15T11:13:12Z INFO /compute/node 200 0.240 10.21.3.4 - GPU batch processed
+2025-12-15T11:13:48Z INFO /sensor/upload 200 0.132 10.21.3.4 - Gyro data packet received
+2025-12-15T11:13:28Z INFO /relay/marslink 200 0.233 172.20.5.20 - Relay ok
+2025-12-15T11:13:52Z INFO /api/search 200 0.114 172.31.8.90 - Search OK
+2025-12-15T11:13:36Z CRITICAL /api/login 504 0.063 10.0.0.100 - Invalid operator PIN
+2025-12-15T11:13:03Z INFO /ops/diagnostics 200 0.205 10.0.0.100 - System diagnostics triggered
+2025-12-15T11:13:09Z INFO /crew/status 200 0.107 10.0.0.100 - Crew heartbeats OK
+2025-12-15T11:13:56Z INFO /api/login 200 0.164 10.21.7.8 - Login OK
+2025-12-15T11:13:49Z INFO /ops/diagnostics 200 0.194 10.21.7.8 - System diagnostics triggered
+2025-12-15T11:13:07Z ERROR /api/login 502 3.775 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:13:02Z INFO /sensor/upload 200 0.024 192.168.1.10 - Gyro data packet received
+2025-12-15T11:13:54Z INFO /sensor/upload 200 0.022 192.168.1.10 - Gyro data packet received
+2025-12-15T11:13:37Z INFO /compute/node 200 0.139 10.30.0.12 - GPU batch processed
+2025-12-15T11:13:44Z INFO /crew/status 200 0.231 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:12:58Z ERROR /api/login 400 0.664 127.0.0.1 - Invalid operator PIN
+2025-12-15T11:13:30Z INFO /relay/marslink 200 0.102 172.31.8.90 - Relay ok
+2025-12-15T11:13:03Z INFO /relay/marslink 200 0.222 10.21.3.4 - Relay ok
+2025-12-15T11:13:07Z INFO /sensor/upload 200 0.037 192.168.55.12 - Gyro data packet received
+2025-12-15T11:13:12Z WARN /sensor/upload 400 2.278 172.20.5.20 - Sudden spike in latency
+2025-12-15T11:13:55Z INFO /sensor/upload 200 0.057 192.168.55.12 - Gyro data packet received
+2025-12-15T11:13:11Z INFO /api/search 200 0.051 172.20.5.20 - Search OK
+2025-12-15T11:13:01Z INFO /telemetry/ingest 200 0.094 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:13:29Z INFO /ops/delete-task 200 0.097 10.21.3.4 - Task purge requested
+2025-12-15T11:13:55Z INFO /sensor/upload 200 0.036 127.0.0.1 - Gyro data packet received
+2025-12-15T11:13:18Z INFO /crew/status 200 0.193 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:12:59Z INFO /api/search 200 0.098 192.168.55.12 - Search OK
+2025-12-15T11:13:10Z ERROR /telemetry/ingest 500 0.958 10.21.3.4 - Lost sync / Relay timeout
+2025-12-15T11:13:54Z INFO /crew/status 200 0.010 10.30.0.12 - Crew heartbeats OK
+2025-12-15T11:12:59Z INFO /relay/marslink 200 0.091 10.30.0.12 - Relay ok
+2025-12-15T11:13:24Z ERROR /api/login 500 0.323 127.0.0.1 - Service down
+2025-12-15T11:13:53Z INFO /crew/status 200 0.100 172.16.9.20 - Crew heartbeats OK
+2025-12-15T11:13:24Z INFO /compute/node 200 0.182 172.16.9.20 - GPU batch processed
+2025-12-15T11:13:11Z INFO /api/search 200 0.262 172.31.8.90 - Search OK
+2025-12-15T11:13:42Z INFO /sensor/upload 200 0.176 192.168.1.10 - Gyro data packet received
+2025-12-15T11:13:01Z INFO /relay/marslink 200 0.085 10.0.0.100 - Relay ok
+2025-12-15T11:13:05Z WARN /telemetry/ingest 400 1.354 172.31.8.90 - Sudden spike in latency
+2025-12-15T11:13:45Z INFO /compute/node 200 0.104 127.0.0.1 - GPU batch processed
+2025-12-15T11:13:48Z CRITICAL /api/login 502 0.543 10.21.3.4 - Service down
+2025-12-15T11:13:43Z INFO /telemetry/ingest 200 0.150 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:13:09Z INFO /sensor/upload 200 0.280 127.0.0.1 - Gyro data packet received
+2025-12-15T11:13:01Z INFO /api/search 200 0.141 172.16.9.20 - Search OK
+2025-12-15T11:13:57Z WARN /telemetry/ingest 429 0.986 192.168.55.12 - Sudden spike in latency
+2025-12-15T11:13:14Z INFO /relay/marslink 200 0.150 10.21.3.4 - Relay ok
+2025-12-15T11:13:12Z INFO /api/search 200 0.150 172.31.8.90 - Search OK
+2025-12-15T11:13:27Z INFO /telemetry/ingest 200 0.034 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:13:08Z INFO /api/search 200 0.136 10.0.0.100 - Search OK
+2025-12-15T11:13:46Z INFO /telemetry/ingest 200 0.029 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:13:11Z INFO /telemetry/ingest 200 0.120 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:13:31Z INFO /telemetry/ingest 200 0.086 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:12:59Z INFO /relay/marslink 200 0.075 172.31.8.90 - Relay ok
+2025-12-15T11:13:40Z INFO /telemetry/ingest 200 0.039 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:13:49Z INFO /relay/marslink 200 0.086 10.21.3.4 - Relay ok
+2025-12-15T11:13:46Z INFO /api/search 200 0.219 10.21.3.4 - Search OK
+2025-12-15T11:13:04Z INFO /telemetry/ingest 200 0.145 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:13:05Z INFO /ops/delete-task 200 0.218 192.168.55.12 - Task purge requested
+2025-12-15T11:13:13Z INFO /api/search 200 0.161 172.31.8.90 - Search OK
+2025-12-15T11:13:37Z WARN /crew/status 200 2.525 172.31.8.90 - Sudden spike in latency
+2025-12-15T11:13:15Z INFO /telemetry/ingest 200 0.190 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:12:58Z INFO /relay/marslink 200 0.111 172.16.9.20 - Relay ok
+2025-12-15T11:13:44Z INFO /telemetry/ingest 200 0.110 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:13:40Z INFO /telemetry/ingest 200 0.037 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:13:55Z INFO /ops/diagnostics 200 0.161 192.168.55.12 - System diagnostics triggered
+2025-12-15T11:13:49Z INFO /ops/diagnostics 200 0.006 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:13:57Z INFO /api/login 200 0.032 172.31.8.90 - Login OK
+2025-12-15T11:13:15Z INFO /telemetry/ingest 200 0.196 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:13:07Z INFO /proc/fuel 200 0.073 10.0.0.100 - Fuel telemetry OK
+2025-12-15T11:13:48Z INFO /compute/node 200 0.102 172.31.8.90 - GPU batch processed
+2025-12-15T11:13:33Z INFO /telemetry/ingest 200 0.238 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:13:42Z INFO /crew/status 200 0.205 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:13:35Z WARN /sensor/upload 400 2.454 172.31.8.90 - Sudden spike in latency
+2025-12-15T11:13:47Z INFO /ops/delete-task 200 0.068 172.31.8.90 - Task purge requested
+2025-12-15T11:13:26Z INFO /api/search 200 0.162 10.0.0.100 - Search OK
+2025-12-15T11:13:56Z ERROR /api/login 500 0.514 10.30.0.12 - Invalid operator PIN
+2025-12-15T11:13:06Z INFO /ops/diagnostics 200 0.115 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:12:58Z INFO /crew/status 200 0.094 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:13:02Z INFO /relay/marslink 200 0.064 192.168.55.12 - Relay ok
+2025-12-15T11:13:02Z INFO /compute/node 200 0.166 127.0.0.1 - GPU batch processed
+2025-12-15T11:13:33Z INFO /crew/status 200 0.164 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:13:19Z INFO /crew/status 200 0.070 10.21.7.8 - Crew heartbeats OK
+2025-12-15T11:13:03Z WARN /compute/node 429 1.959 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:13:51Z INFO /api/search 200 0.211 192.168.55.12 - Search OK
+2025-12-15T11:13:11Z INFO /ops/delete-task 200 0.183 127.0.0.1 - Task purge requested
+2025-12-15T11:13:15Z INFO /telemetry/ingest 200 0.118 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:13:03Z INFO /api/search 200 0.055 10.21.7.8 - Search OK
+2025-12-15T11:13:23Z INFO /sensor/upload 200 0.043 192.168.55.12 - Gyro data packet received
+2025-12-15T11:13:57Z INFO /api/search 200 0.080 10.30.0.12 - Search OK
+2025-12-15T11:13:13Z INFO /crew/status 200 0.097 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:13:27Z INFO /proc/fuel 200 0.067 172.16.9.20 - Fuel telemetry OK
+2025-12-15T11:13:14Z INFO /telemetry/ingest 200 0.177 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:13:33Z INFO /api/login 200 0.142 172.31.8.90 - Login OK
+2025-12-15T11:13:53Z INFO /telemetry/ingest 200 0.007 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:13:23Z INFO /api/login 200 0.008 10.21.7.8 - Login OK
+2025-12-15T11:13:44Z INFO /sensor/upload 200 0.182 172.20.5.20 - Gyro data packet received
+2025-12-15T11:13:02Z INFO /crew/status 200 0.206 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:13:50Z WARN /api/search 200 2.281 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:13:09Z INFO /telemetry/ingest 200 0.146 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:13:09Z INFO /sensor/upload 200 0.169 10.0.0.100 - Gyro data packet received
+2025-12-15T11:13:33Z INFO /ops/diagnostics 200 0.100 10.0.0.100 - System diagnostics triggered
+2025-12-15T11:13:09Z INFO /telemetry/ingest 200 0.231 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:13:53Z INFO /api/login 200 0.044 10.30.0.12 - Login OK
+2025-12-15T11:12:58Z INFO /api/search 200 0.212 192.168.55.12 - Search OK
+2025-12-15T11:13:15Z INFO /api/search 200 0.087 192.168.1.10 - Search OK
+2025-12-15T11:13:34Z INFO /relay/marslink 200 0.060 192.168.1.10 - Relay ok
+2025-12-15T11:13:05Z ERROR /telemetry/ingest 500 5.303 10.21.7.8 - Lost sync / Relay timeout
+2025-12-15T11:13:16Z INFO /relay/marslink 200 0.053 192.168.55.12 - Relay ok
+2025-12-15T11:13:33Z INFO /proc/fuel 200 0.329 172.16.9.20 - Fuel telemetry OK
+2025-12-15T11:13:30Z INFO /telemetry/ingest 200 0.202 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:14:02Z INFO /relay/marslink 200 0.153 10.21.3.4 - Relay ok
+2025-12-15T11:14:22Z INFO /crew/status 200 0.128 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:14:39Z INFO /api/search 200 0.093 10.21.3.4 - Search OK
+2025-12-15T11:14:10Z INFO /compute/node 200 0.003 10.21.3.4 - GPU batch processed
+2025-12-15T11:13:59Z INFO /telemetry/ingest 200 0.055 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:02Z INFO /api/search 200 0.108 10.21.3.4 - Search OK
+2025-12-15T11:14:25Z INFO /api/search 200 0.112 10.21.3.4 - Search OK
+2025-12-15T11:14:14Z INFO /api/search 200 0.185 10.21.3.4 - Search OK
+2025-12-15T11:14:51Z INFO /telemetry/ingest 200 0.129 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:52Z INFO /api/search 200 0.164 10.21.3.4 - Search OK
+2025-12-15T11:14:40Z INFO /api/search 200 0.136 10.21.3.4 - Search OK
+2025-12-15T11:14:06Z INFO /telemetry/ingest 200 0.052 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:52Z INFO /api/search 200 0.187 10.21.3.4 - Search OK
+2025-12-15T11:14:16Z INFO /telemetry/ingest 200 0.148 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:40Z INFO /telemetry/ingest 200 0.065 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:57Z INFO /compute/node 200 0.182 10.21.3.4 - GPU batch processed
+2025-12-15T11:14:47Z INFO /crew/status 200 0.105 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:14:17Z INFO /telemetry/ingest 200 0.174 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:56Z INFO /telemetry/ingest 200 0.048 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:22Z INFO /api/search 200 0.077 10.21.3.4 - Search OK
+2025-12-15T11:14:13Z INFO /relay/marslink 200 0.210 172.31.8.90 - Relay ok
+2025-12-15T11:14:41Z INFO /api/login 200 0.042 192.168.55.12 - Login OK
+2025-12-15T11:14:25Z INFO /api/search 200 0.272 10.0.0.100 - Search OK
+2025-12-15T11:13:59Z INFO /telemetry/ingest 200 0.156 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:14:00Z INFO /telemetry/ingest 200 0.162 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:14:48Z INFO /telemetry/ingest 200 0.002 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:14:31Z INFO /api/search 200 0.213 172.31.8.90 - Search OK
+2025-12-15T11:14:08Z INFO /api/search 200 0.004 172.20.5.20 - Search OK
+2025-12-15T11:14:50Z INFO /api/login 200 0.040 192.168.1.10 - Login OK
+2025-12-15T11:14:14Z INFO /api/search 200 0.055 10.21.7.8 - Search OK
+2025-12-15T11:14:44Z INFO /api/search 200 0.190 10.21.7.8 - Search OK
+2025-12-15T11:14:32Z INFO /ops/diagnostics 200 0.110 192.168.55.12 - System diagnostics triggered
+2025-12-15T11:14:29Z INFO /proc/fuel 200 0.118 127.0.0.1 - Fuel telemetry OK
+2025-12-15T11:14:45Z INFO /telemetry/ingest 200 0.197 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:14:16Z INFO /telemetry/ingest 200 0.167 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:14:23Z INFO /sensor/upload 200 0.230 127.0.0.1 - Gyro data packet received
+2025-12-15T11:14:18Z INFO /api/login 200 0.154 172.16.9.20 - Login OK
+2025-12-15T11:14:40Z INFO /api/login 200 0.006 10.21.7.8 - Login OK
+2025-12-15T11:14:27Z INFO /sensor/upload 200 0.179 127.0.0.1 - Gyro data packet received
+2025-12-15T11:14:17Z INFO /telemetry/ingest 200 0.216 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:14:17Z INFO /telemetry/ingest 200 0.030 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:08Z INFO /proc/fuel 200 0.097 127.0.0.1 - Fuel telemetry OK
+2025-12-15T11:14:09Z INFO /ops/delete-task 200 0.129 10.30.0.12 - Task purge requested
+2025-12-15T11:14:03Z INFO /relay/marslink 200 0.087 10.30.0.12 - Relay ok
+2025-12-15T11:14:15Z INFO /telemetry/ingest 200 0.061 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:14:23Z INFO /api/login 200 0.148 172.20.5.20 - Login OK
+2025-12-15T11:14:03Z WARN /ops/diagnostics 400 2.760 10.30.0.12 - Sudden spike in latency
+2025-12-15T11:14:18Z WARN /sensor/upload 200 2.702 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:14:11Z INFO /api/search 200 0.135 10.21.3.4 - Search OK
+2025-12-15T11:14:14Z INFO /crew/status 200 0.157 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:14:42Z INFO /relay/marslink 200 0.171 192.168.1.10 - Relay ok
+2025-12-15T11:14:05Z INFO /telemetry/ingest 200 0.093 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:14:16Z INFO /api/search 200 0.099 192.168.1.10 - Search OK
+2025-12-15T11:14:03Z INFO /relay/marslink 200 0.127 10.30.0.12 - Relay ok
+2025-12-15T11:14:36Z INFO /telemetry/ingest 200 0.149 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:14:31Z INFO /sensor/upload 200 0.287 172.16.9.20 - Gyro data packet received
+2025-12-15T11:14:52Z ERROR /telemetry/ingest 400 3.799 172.20.5.20 - Lost sync / Relay timeout
+2025-12-15T11:14:34Z INFO /telemetry/ingest 200 0.205 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:14:08Z INFO /crew/status 200 0.190 10.30.0.12 - Crew heartbeats OK
+2025-12-15T11:14:04Z INFO /telemetry/ingest 200 0.264 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:14:54Z INFO /crew/status 200 0.022 172.20.5.20 - Crew heartbeats OK
+2025-12-15T11:14:50Z INFO /telemetry/ingest 200 0.163 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:14:31Z INFO /api/search 200 0.066 127.0.0.1 - Search OK
+2025-12-15T11:14:57Z INFO /ops/diagnostics 200 0.204 127.0.0.1 - System diagnostics triggered
+2025-12-15T11:14:35Z INFO /api/login 200 0.111 10.0.0.100 - Login OK
+2025-12-15T11:14:15Z INFO /sensor/upload 200 0.208 10.0.0.100 - Gyro data packet received
+2025-12-15T11:14:21Z INFO /telemetry/ingest 200 0.012 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:14:08Z INFO /sensor/upload 200 0.029 10.0.0.100 - Gyro data packet received
+2025-12-15T11:14:02Z INFO /api/search 200 0.137 10.21.3.4 - Search OK
+2025-12-15T11:14:18Z INFO /api/search 200 0.089 127.0.0.1 - Search OK
+2025-12-15T11:14:05Z INFO /compute/node 200 0.087 172.16.9.20 - GPU batch processed
+2025-12-15T11:14:27Z INFO /ops/diagnostics 200 0.092 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:13:58Z ERROR /api/search 400 3.018 172.16.9.20 - Sudden spike in latency
+2025-12-15T11:14:11Z INFO /api/login 200 0.104 192.168.55.12 - Login OK
+2025-12-15T11:14:47Z WARN /proc/fuel 400 2.085 127.0.0.1 - Sudden spike in latency
+2025-12-15T11:14:23Z INFO /compute/node 200 0.159 172.20.5.20 - GPU batch processed
+2025-12-15T11:14:44Z INFO /telemetry/ingest 200 0.133 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:14:02Z WARN /telemetry/ingest 429 2.914 172.16.9.20 - Sudden spike in latency
+2025-12-15T11:14:29Z INFO /api/search 200 0.064 172.20.5.20 - Search OK
+2025-12-15T11:14:10Z INFO /ops/diagnostics 200 0.143 10.21.7.8 - System diagnostics triggered
+2025-12-15T11:14:06Z INFO /relay/marslink 200 0.102 127.0.0.1 - Relay ok
+2025-12-15T11:14:16Z INFO /crew/status 200 0.181 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:14:34Z INFO /crew/status 200 0.079 10.0.0.100 - Crew heartbeats OK
+2025-12-15T11:14:03Z INFO /api/search 200 0.062 127.0.0.1 - Search OK
+2025-12-15T11:14:40Z INFO /compute/node 200 0.148 172.16.9.20 - GPU batch processed
+2025-12-15T11:14:42Z WARN /api/login 400 2.837 172.31.8.90 - Sudden spike in latency
+2025-12-15T11:14:49Z INFO /compute/node 200 0.072 10.0.0.100 - GPU batch processed
+2025-12-15T11:14:11Z INFO /sensor/upload 200 0.108 10.30.0.12 - Gyro data packet received
+2025-12-15T11:14:29Z INFO /crew/status 200 0.162 127.0.0.1 - Crew heartbeats OK
+2025-12-15T11:14:53Z INFO /sensor/upload 200 0.033 10.21.3.4 - Gyro data packet received
+2025-12-15T11:14:20Z INFO /telemetry/ingest 200 0.131 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:14:24Z INFO /api/search 200 0.181 10.30.0.12 - Search OK
+2025-12-15T11:14:12Z INFO /api/search 200 0.153 172.16.9.20 - Search OK
+2025-12-15T11:13:59Z INFO /relay/marslink 200 0.155 192.168.55.12 - Relay ok
+2025-12-15T11:14:45Z INFO /telemetry/ingest 200 0.026 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:13:58Z INFO /relay/marslink 200 0.099 172.31.8.90 - Relay ok
+2025-12-15T11:14:42Z INFO /ops/diagnostics 200 0.174 10.0.0.100 - System diagnostics triggered
+2025-12-15T11:14:29Z INFO /api/search 200 0.067 10.30.0.12 - Search OK
+2025-12-15T11:14:32Z INFO /telemetry/ingest 200 0.243 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:14:55Z INFO /telemetry/ingest 200 0.116 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:14:51Z INFO /sensor/upload 200 0.016 172.16.9.20 - Gyro data packet received
+2025-12-15T11:14:12Z INFO /api/search 200 0.228 127.0.0.1 - Search OK
+2025-12-15T11:14:57Z INFO /ops/diagnostics 200 0.174 172.20.5.20 - System diagnostics triggered
+2025-12-15T11:14:53Z INFO /ops/delete-task 200 0.228 10.0.0.100 - Auto-generated seq event for /ops/delete-task
+2025-12-15T11:14:41Z INFO /auth/login 200 0.273 10.0.0.100 - Auto-generated seq event for /auth/login
+2025-12-15T11:14:14Z WARN /ops/diagnostics 400 0.198 10.0.0.100 - Auto-generated seq event for /ops/diagnostics
+2025-12-15T11:15:13Z WARN /ops/diagnostics 429 2.837 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:15:27Z INFO /sensor/upload 200 0.096 10.21.3.4 - Gyro data packet received
+2025-12-15T11:15:30Z INFO /sensor/upload 200 0.097 10.21.3.4 - Gyro data packet received
+2025-12-15T11:15:49Z WARN /ops/delete-task 200 1.546 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:15:00Z INFO /ops/delete-task 200 0.254 10.21.3.4 - Task purge requested
+2025-12-15T11:15:46Z INFO /api/login 200 0.213 10.21.3.4 - Login OK
+2025-12-15T11:14:58Z INFO /telemetry/ingest 200 0.072 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:15:45Z INFO /relay/marslink 200 0.118 10.21.3.4 - Relay ok
+2025-12-15T11:15:47Z INFO /api/search 200 0.135 10.21.3.4 - Search OK
+2025-12-15T11:15:26Z INFO /api/search 200 0.064 10.21.3.4 - Search OK
+2025-12-15T11:15:32Z INFO /api/search 200 0.210 10.21.3.4 - Search OK
+2025-12-15T11:15:54Z INFO /api/login 200 0.142 10.21.3.4 - Login OK
+2025-12-15T11:15:18Z INFO /telemetry/ingest 200 0.113 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:15:51Z ERROR /telemetry/ingest 500 3.684 10.21.3.4 - Lost sync / Relay timeout
+2025-12-15T11:15:11Z INFO /telemetry/ingest 200 0.244 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:15:04Z INFO /api/search 200 0.142 10.21.3.4 - Search OK
+2025-12-15T11:15:57Z INFO /crew/status 200 0.163 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:15:32Z INFO /api/search 200 0.189 10.21.3.4 - Search OK
+2025-12-15T11:15:09Z INFO /telemetry/ingest 200 0.153 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:15:03Z INFO /compute/node 200 0.073 10.21.3.4 - GPU batch processed
+2025-12-15T11:15:42Z INFO /telemetry/ingest 200 0.020 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:15:29Z INFO /api/search 200 0.145 10.30.0.12 - Search OK
+2025-12-15T11:15:35Z INFO /sensor/upload 200 0.109 172.31.8.90 - Gyro data packet received
+2025-12-15T11:15:35Z INFO /telemetry/ingest 200 0.127 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:15:15Z INFO /compute/node 200 0.046 10.21.7.8 - GPU batch processed
+2025-12-15T11:15:40Z INFO /telemetry/ingest 200 0.087 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:15:00Z INFO /crew/status 200 0.083 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:15:34Z INFO /proc/fuel 200 0.207 127.0.0.1 - Fuel telemetry OK
+2025-12-15T11:15:50Z INFO /telemetry/ingest 200 0.115 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:15:41Z ERROR /crew/status 400 3.207 172.20.5.20 - Sudden spike in latency
+2025-12-15T11:15:45Z INFO /telemetry/ingest 200 0.141 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:15:57Z INFO /api/search 200 0.005 192.168.1.10 - Search OK
+2025-12-15T11:15:13Z ERROR /api/search 502 3.396 172.16.9.20 - Sudden spike in latency
+2025-12-15T11:15:06Z INFO /crew/status 200 0.201 10.21.7.8 - Crew heartbeats OK
+2025-12-15T11:15:49Z INFO /proc/fuel 200 0.107 10.0.0.100 - Fuel telemetry OK
+2025-12-15T11:15:25Z INFO /telemetry/ingest 200 0.127 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:15:18Z INFO /api/search 200 0.035 10.30.0.12 - Search OK
+2025-12-15T11:15:26Z INFO /telemetry/ingest 200 0.057 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:15:44Z INFO /telemetry/ingest 200 0.006 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:15:49Z INFO /telemetry/ingest 200 0.178 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:15:46Z INFO /crew/status 200 0.019 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:15:10Z INFO /telemetry/ingest 200 0.195 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:15:46Z WARN /api/login 429 2.572 127.0.0.1 - Sudden spike in latency
+2025-12-15T11:15:44Z INFO /api/login 200 0.019 172.16.9.20 - Login OK
+2025-12-15T11:15:09Z INFO /compute/node 200 0.083 192.168.55.12 - GPU batch processed
+2025-12-15T11:15:04Z INFO /telemetry/ingest 200 0.074 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:15:28Z INFO /sensor/upload 200 0.146 10.21.3.4 - Gyro data packet received
+2025-12-15T11:14:58Z WARN /api/search 400 1.239 172.16.9.20 - Sudden spike in latency
+2025-12-15T11:15:12Z INFO /api/search 200 0.203 127.0.0.1 - Search OK
+2025-12-15T11:15:14Z INFO /proc/fuel 200 0.063 192.168.1.10 - Fuel telemetry OK
+2025-12-15T11:15:06Z WARN /compute/node 429 2.717 172.16.9.20 - Sudden spike in latency
+2025-12-15T11:15:17Z INFO /api/search 200 0.137 127.0.0.1 - Search OK
+2025-12-15T11:15:00Z INFO /compute/node 200 0.197 172.20.5.20 - GPU batch processed
+2025-12-15T11:15:24Z INFO /api/login 200 0.158 172.20.5.20 - Login OK
+2025-12-15T11:15:21Z INFO /api/login 200 0.079 10.30.0.12 - Login OK
+2025-12-15T11:15:09Z INFO /sensor/upload 200 0.231 192.168.55.12 - Gyro data packet received
+2025-12-15T11:14:58Z INFO /api/search 200 0.211 172.16.9.20 - Search OK
+2025-12-15T11:15:34Z INFO /crew/status 200 0.099 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:15:29Z INFO /crew/status 200 0.017 10.0.0.100 - Crew heartbeats OK
+2025-12-15T11:14:58Z INFO /relay/marslink 200 0.069 10.21.7.8 - Relay ok
+2025-12-15T11:15:24Z ERROR /telemetry/ingest 400 4.253 10.21.7.8 - Lost sync / Relay timeout
+2025-12-15T11:15:47Z INFO /api/search 200 0.015 10.30.0.12 - Search OK
+2025-12-15T11:15:30Z INFO /api/login 200 0.059 192.168.55.12 - Login OK
+2025-12-15T11:15:48Z INFO /api/login 200 0.121 10.30.0.12 - Login OK
+2025-12-15T11:15:06Z INFO /telemetry/ingest 200 0.129 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:15:03Z INFO /telemetry/ingest 200 0.173 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:15:51Z INFO /ops/diagnostics 200 0.171 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:15:28Z ERROR /api/login 500 0.466 10.30.0.12 - Invalid operator PIN
+2025-12-15T11:15:31Z INFO /telemetry/ingest 200 0.109 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:15:33Z INFO /sensor/upload 200 0.026 172.31.8.90 - Gyro data packet received
+2025-12-15T11:15:17Z INFO /api/search 200 0.044 10.30.0.12 - Search OK
+2025-12-15T11:15:07Z INFO /ops/diagnostics 200 0.261 10.30.0.12 - System diagnostics triggered
+2025-12-15T11:15:25Z INFO /sensor/upload 200 0.180 10.21.7.8 - Gyro data packet received
+2025-12-15T11:15:47Z INFO /telemetry/ingest 200 0.170 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:15:10Z INFO /relay/marslink 200 0.074 192.168.1.10 - Relay ok
+2025-12-15T11:15:34Z WARN /crew/status 429 1.829 10.21.7.8 - Sudden spike in latency
+2025-12-15T11:15:28Z INFO /sensor/upload 200 0.079 10.30.0.12 - Gyro data packet received
+2025-12-15T11:15:41Z INFO /crew/status 200 0.033 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:15:39Z INFO /sensor/upload 200 0.154 10.30.0.12 - Gyro data packet received
+2025-12-15T11:15:09Z INFO /api/search 200 0.057 127.0.0.1 - Search OK
+2025-12-15T11:15:36Z INFO /telemetry/ingest 200 0.086 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:15:54Z INFO /api/search 200 0.160 10.21.3.4 - Search OK
+2025-12-15T11:15:11Z INFO /proc/fuel 200 0.252 192.168.1.10 - Fuel telemetry OK
+2025-12-15T11:15:09Z INFO /ops/diagnostics 200 0.198 10.21.7.8 - System diagnostics triggered
+2025-12-15T11:15:09Z INFO /sensor/upload 200 0.210 172.16.9.20 - Gyro data packet received
+2025-12-15T11:15:09Z INFO /api/login 200 0.084 10.21.7.8 - Login OK
+2025-12-15T11:15:22Z INFO /api/search 200 0.181 10.21.7.8 - Search OK
+2025-12-15T11:15:37Z INFO /telemetry/ingest 200 0.151 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:15:01Z INFO /api/search 200 0.167 10.0.0.100 - Search OK
+2025-12-15T11:15:17Z INFO /telemetry/ingest 200 0.106 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:15:06Z INFO /ops/delete-task 200 0.171 10.0.0.100 - Task purge requested
+2025-12-15T11:15:26Z INFO /telemetry/ingest 200 0.081 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:15:09Z INFO /proc/fuel 200 0.144 172.20.5.20 - Fuel telemetry OK
+2025-12-15T11:15:00Z INFO /crew/status 200 0.090 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:15:16Z INFO /telemetry/ingest 200 0.130 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:15:18Z INFO /compute/node 200 0.005 172.31.8.90 - GPU batch processed
+2025-12-15T11:15:44Z INFO /api/login 200 0.190 10.21.7.8 - Login OK
+2025-12-15T11:16:06Z INFO /api/search 200 0.053 10.21.3.4 - Search OK
+2025-12-15T11:16:03Z INFO /crew/status 200 0.081 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:16:47Z INFO /api/login 200 0.117 10.21.3.4 - Login OK
+2025-12-15T11:16:00Z INFO /sensor/upload 200 0.067 10.21.3.4 - Gyro data packet received
+2025-12-15T11:16:37Z INFO /telemetry/ingest 200 0.010 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:03Z INFO /api/login 200 0.188 10.21.3.4 - Login OK
+2025-12-15T11:16:44Z INFO /compute/node 200 0.053 10.21.3.4 - GPU batch processed
+2025-12-15T11:16:07Z INFO /sensor/upload 200 0.091 10.21.3.4 - Gyro data packet received
+2025-12-15T11:16:52Z INFO /telemetry/ingest 200 0.232 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:52Z INFO /telemetry/ingest 200 0.084 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:32Z INFO /api/login 200 0.157 10.21.3.4 - Login OK
+2025-12-15T11:16:04Z ERROR /api/login 500 0.066 10.21.3.4 - Invalid operator PIN
+2025-12-15T11:16:23Z INFO /sensor/upload 200 0.084 10.21.3.4 - Gyro data packet received
+2025-12-15T11:16:03Z INFO /api/search 200 0.187 10.21.3.4 - Search OK
+2025-12-15T11:16:56Z INFO /api/search 200 0.030 10.21.3.4 - Search OK
+2025-12-15T11:16:23Z INFO /api/search 200 0.084 10.21.3.4 - Search OK
+2025-12-15T11:16:55Z INFO /api/login 200 0.111 10.21.3.4 - Login OK
+2025-12-15T11:16:03Z INFO /telemetry/ingest 200 0.189 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:48Z INFO /api/search 200 0.212 10.21.3.4 - Search OK
+2025-12-15T11:16:21Z INFO /telemetry/ingest 200 0.141 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:21Z WARN /api/login 429 2.803 10.30.0.12 - Sudden spike in latency
+2025-12-15T11:16:01Z INFO /telemetry/ingest 200 0.116 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:16:00Z INFO /telemetry/ingest 200 0.262 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:16:02Z INFO /proc/fuel 200 0.140 172.20.5.20 - Fuel telemetry OK
+2025-12-15T11:16:36Z INFO /relay/marslink 200 0.150 10.30.0.12 - Relay ok
+2025-12-15T11:16:19Z INFO /ops/diagnostics 200 0.022 172.20.5.20 - System diagnostics triggered
+2025-12-15T11:16:10Z WARN /api/search 200 2.168 10.30.0.12 - Sudden spike in latency
+2025-12-15T11:16:48Z INFO /api/login 200 0.139 127.0.0.1 - Login OK
+2025-12-15T11:16:23Z INFO /api/login 200 0.237 10.21.7.8 - Login OK
+2025-12-15T11:16:30Z INFO /api/search 200 0.181 10.0.0.100 - Search OK
+2025-12-15T11:16:41Z CRITICAL /api/login 502 0.089 192.168.55.12 - Service down
+2025-12-15T11:16:21Z INFO /ops/delete-task 200 0.136 10.30.0.12 - Task purge requested
+2025-12-15T11:16:34Z INFO /telemetry/ingest 200 0.132 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:25Z INFO /api/search 200 0.229 10.21.7.8 - Search OK
+2025-12-15T11:16:21Z INFO /api/search 200 0.009 127.0.0.1 - Search OK
+2025-12-15T11:16:54Z INFO /compute/node 200 0.188 172.31.8.90 - GPU batch processed
+2025-12-15T11:16:40Z INFO /crew/status 200 0.037 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:16:55Z INFO /sensor/upload 200 0.001 10.21.3.4 - Gyro data packet received
+2025-12-15T11:16:29Z INFO /api/search 200 0.148 172.31.8.90 - Search OK
+2025-12-15T11:16:02Z INFO /telemetry/ingest 200 0.056 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:12Z INFO /api/search 200 0.168 192.168.55.12 - Search OK
+2025-12-15T11:16:04Z INFO /api/login 200 0.095 172.20.5.20 - Login OK
+2025-12-15T11:16:49Z INFO /api/search 200 0.065 192.168.55.12 - Search OK
+2025-12-15T11:16:36Z WARN /sensor/upload 400 1.723 172.16.9.20 - Sudden spike in latency
+2025-12-15T11:16:21Z INFO /telemetry/ingest 200 0.182 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:16:32Z INFO /api/search 200 0.139 172.31.8.90 - Search OK
+2025-12-15T11:16:23Z WARN /ops/diagnostics 429 1.914 192.168.55.12 - Sudden spike in latency
+2025-12-15T11:16:09Z INFO /api/search 200 0.078 10.30.0.12 - Search OK
+2025-12-15T11:16:24Z INFO /sensor/upload 200 0.174 10.21.3.4 - Gyro data packet received
+2025-12-15T11:16:49Z INFO /telemetry/ingest 200 0.057 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:16:34Z INFO /ops/diagnostics 200 0.127 10.0.0.100 - System diagnostics triggered
+2025-12-15T11:16:53Z INFO /sensor/upload 200 0.231 10.0.0.100 - Gyro data packet received
+2025-12-15T11:16:03Z INFO /compute/node 200 0.093 10.0.0.100 - GPU batch processed
+2025-12-15T11:16:27Z INFO /crew/status 200 0.168 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:16:35Z INFO /api/search 200 0.166 10.0.0.100 - Search OK
+2025-12-15T11:16:26Z INFO /api/login 200 0.130 172.16.9.20 - Login OK
+2025-12-15T11:16:42Z INFO /api/login 200 0.115 10.0.0.100 - Login OK
+2025-12-15T11:16:19Z INFO /telemetry/ingest 200 0.026 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:16:41Z INFO /api/login 200 0.204 172.16.9.20 - Login OK
+2025-12-15T11:16:15Z INFO /telemetry/ingest 200 0.198 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:16:19Z INFO /telemetry/ingest 200 0.112 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:16:19Z INFO /api/login 200 0.094 192.168.1.10 - Login OK
+2025-12-15T11:16:12Z INFO /telemetry/ingest 200 0.132 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:16:18Z INFO /compute/node 200 0.093 127.0.0.1 - GPU batch processed
+2025-12-15T11:16:13Z INFO /api/search 200 0.231 10.30.0.12 - Search OK
+2025-12-15T11:15:59Z INFO /proc/fuel 200 0.199 192.168.55.12 - Fuel telemetry OK
+2025-12-15T11:16:35Z INFO /crew/status 200 0.113 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:16:01Z INFO /api/login 200 0.176 10.21.3.4 - Login OK
+2025-12-15T11:16:29Z INFO /telemetry/ingest 200 0.108 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:16:21Z INFO /ops/delete-task 200 0.023 10.0.0.100 - Task purge requested
+2025-12-15T11:16:12Z INFO /api/search 200 0.033 172.31.8.90 - Search OK
+2025-12-15T11:15:58Z INFO /ops/delete-task 200 0.107 10.21.3.4 - Task purge requested
+2025-12-15T11:16:44Z INFO /api/search 200 0.033 10.0.0.100 - Search OK
+2025-12-15T11:16:19Z INFO /compute/node 200 0.078 10.0.0.100 - GPU batch processed
+2025-12-15T11:16:51Z INFO /telemetry/ingest 200 0.219 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:19Z INFO /telemetry/ingest 200 0.089 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:09Z INFO /sensor/upload 200 0.204 10.21.3.4 - Gyro data packet received
+2025-12-15T11:16:00Z INFO /ops/diagnostics 200 0.040 192.168.1.10 - System diagnostics triggered
+2025-12-15T11:16:17Z INFO /telemetry/ingest 200 0.268 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:16:43Z INFO /telemetry/ingest 200 0.285 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:16:21Z INFO /api/search 200 0.113 172.16.9.20 - Search OK
+2025-12-15T11:16:16Z INFO /proc/fuel 200 0.196 10.21.3.4 - Fuel telemetry OK
+2025-12-15T11:16:21Z INFO /api/search 200 0.151 10.30.0.12 - Search OK
+2025-12-15T11:16:20Z INFO /telemetry/ingest 200 0.272 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:16:41Z INFO /telemetry/ingest 200 0.235 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:16:44Z INFO /api/search 200 0.151 10.21.3.4 - Search OK
+2025-12-15T11:16:06Z INFO /crew/status 200 0.209 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:16:55Z INFO /api/search 200 0.143 172.20.5.20 - Search OK
+2025-12-15T11:16:09Z INFO /api/login 200 0.109 127.0.0.1 - Login OK
+2025-12-15T11:16:13Z INFO /crew/status 200 0.190 172.16.9.20 - Crew heartbeats OK
+2025-12-15T11:16:34Z INFO /api/search 200 0.226 10.0.0.100 - Search OK
+2025-12-15T11:16:51Z INFO /api/search 200 0.076 192.168.55.12 - Search OK
+2025-12-15T11:16:03Z INFO /api/login 200 0.173 192.168.55.12 - Login OK
+2025-12-15T11:16:13Z INFO /sensor/upload 200 0.053 10.30.0.12 - Gyro data packet received
+2025-12-15T11:16:56Z INFO /api/login 200 0.088 10.21.3.4 - Login OK
+2025-12-15T11:16:19Z INFO /telemetry/ingest 200 0.073 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:23Z INFO /api/search 200 0.051 172.31.8.90 - Search OK
+2025-12-15T11:16:02Z INFO /proc/fuel 200 0.300 10.21.7.8 - Fuel telemetry OK
+2025-12-15T11:16:46Z INFO /api/login 200 0.154 10.30.0.12 - Login OK
+2025-12-15T11:16:34Z ERROR /crew/status 500 3.382 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:16:55Z INFO /telemetry/ingest 200 0.141 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:56Z INFO /ops/delete-task 200 0.106 10.21.3.4 - Task purge requested
+2025-12-15T11:16:34Z INFO /sensor/upload 200 0.188 10.0.0.100 - Gyro data packet received
+2025-12-15T11:16:07Z INFO /sensor/upload 200 0.087 127.0.0.1 - Gyro data packet received
+2025-12-15T11:16:30Z INFO /telemetry/ingest 200 0.115 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:16:32Z INFO /api/search 200 0.064 172.31.8.90 - Search OK
+2025-12-15T11:16:37Z INFO /telemetry/ingest 200 0.065 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:20Z INFO /telemetry/ingest 200 0.136 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:56Z INFO /compute/node 200 0.302 172.20.5.20 - GPU batch processed
+2025-12-15T11:16:50Z INFO /relay/marslink 200 0.163 172.16.9.20 - Relay ok
+2025-12-15T11:16:24Z INFO /api/search 200 0.222 10.21.3.4 - Search OK
+2025-12-15T11:16:56Z INFO /api/search 200 0.129 10.21.7.8 - Search OK
+2025-12-15T11:16:04Z INFO /proc/fuel 200 0.163 172.31.8.90 - Fuel telemetry OK
+2025-12-15T11:16:16Z ERROR /telemetry/ingest 500 2.926 172.20.5.20 - Lost sync / Relay timeout
+2025-12-15T11:16:43Z INFO /compute/node 200 0.229 127.0.0.1 - GPU batch processed
+2025-12-15T11:16:57Z INFO /telemetry/ingest 200 0.003 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:16:30Z INFO /ops/delete-task 200 0.137 192.168.55.12 - Task purge requested
+2025-12-15T11:16:33Z INFO /api/search 200 0.020 127.0.0.1 - Search OK
+2025-12-15T11:16:28Z INFO /telemetry/ingest 200 0.171 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:16:25Z INFO /api/search 200 0.091 127.0.0.1 - Search OK
+2025-12-15T11:16:37Z INFO /telemetry/ingest 200 0.091 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:16:51Z INFO /sensor/upload 200 0.239 172.20.5.20 - Gyro data packet received
+2025-12-15T11:16:18Z INFO /compute/node 200 0.231 172.31.8.90 - GPU batch processed
+2025-12-15T11:16:38Z INFO /api/search 200 0.103 172.20.5.20 - Search OK
+2025-12-15T11:16:22Z INFO /api/search 200 0.173 192.168.55.12 - Search OK
+2025-12-15T11:16:08Z INFO /api/login 200 0.078 172.16.9.20 - Login OK
+2025-12-15T11:16:27Z INFO /crew/status 200 0.229 172.20.5.20 - Crew heartbeats OK
+2025-12-15T11:16:42Z INFO /api/search 200 0.104 172.20.5.20 - Search OK
+2025-12-15T11:16:03Z INFO /ops/diagnostics 200 0.014 172.20.5.20 - System diagnostics triggered
+2025-12-15T11:16:02Z INFO /compute/node 200 0.161 192.168.1.10 - GPU batch processed
+2025-12-15T11:16:34Z INFO /ops/delete-task 200 0.121 10.21.7.8 - Task purge requested
+2025-12-15T11:16:33Z INFO /telemetry/ingest 200 0.204 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:16:52Z INFO /relay/marslink 200 0.128 10.21.3.4 - Relay ok
+2025-12-15T11:16:56Z ERROR /api/login 400 0.178 192.168.1.10 - Service down
+2025-12-15T11:16:17Z INFO /api/login 200 0.158 172.16.9.20 - Login OK
+2025-12-15T11:16:52Z INFO /crew/status 200 0.147 10.30.0.12 - Crew heartbeats OK
+2025-12-15T11:16:02Z INFO /api/login 200 0.043 192.168.55.12 - Login OK
+2025-12-15T11:16:48Z INFO /api/search 200 0.108 10.21.7.8 - Search OK
+2025-12-15T11:16:47Z INFO /sensor/upload 200 0.069 127.0.0.1 - Gyro data packet received
+2025-12-15T11:16:14Z INFO /api/search 200 0.024 10.30.0.12 - Search OK
+2025-12-15T11:16:45Z INFO /ops/delete-task 200 0.112 127.0.0.1 - Task purge requested
+2025-12-15T11:16:34Z INFO /sensor/upload 200 0.218 10.30.0.12 - Gyro data packet received
+2025-12-15T11:16:42Z INFO /api/search 200 0.141 10.21.7.8 - Search OK
+2025-12-15T11:16:44Z INFO /api/search 200 0.081 172.20.5.20 - Search OK
+2025-12-15T11:15:58Z INFO /telemetry/ingest 200 0.087 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:26Z WARN /api/search 200 2.937 172.16.9.20 - Sudden spike in latency
+2025-12-15T11:16:41Z INFO /api/search 200 0.016 10.21.7.8 - Search OK
+2025-12-15T11:16:52Z INFO /ops/delete-task 200 0.241 10.21.3.4 - Task purge requested
+2025-12-15T11:16:28Z INFO /telemetry/ingest 200 0.148 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:15:58Z INFO /api/login 200 0.217 10.21.3.4 - Login OK
+2025-12-15T11:16:06Z INFO /ops/diagnostics 200 0.059 10.21.7.8 - System diagnostics triggered
+2025-12-15T11:16:36Z INFO /sensor/upload 200 0.077 127.0.0.1 - Gyro data packet received
+2025-12-15T11:16:47Z INFO /api/search 200 0.150 192.168.55.12 - Search OK
+2025-12-15T11:16:18Z INFO /api/login 200 0.135 172.16.9.20 - Login OK
+2025-12-15T11:16:29Z INFO /api/login 200 0.018 10.21.7.8 - Login OK
+2025-12-15T11:16:22Z ERROR /compute/node 502 3.615 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:16:05Z ERROR /api/login 400 3.195 172.31.8.90 - Sudden spike in latency
+2025-12-15T11:16:08Z INFO /telemetry/ingest 200 0.191 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:16:17Z INFO /telemetry/ingest 200 0.047 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:16:20Z INFO /telemetry/ingest 200 0.144 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:16:50Z ERROR /compute/node 502 3.135 172.20.5.20 - Sudden spike in latency
+2025-12-15T11:16:14Z INFO /telemetry/ingest 200 0.194 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:16:41Z INFO /telemetry/ingest 200 0.163 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:16:02Z INFO /compute/node 200 0.110 172.31.8.90 - GPU batch processed
+2025-12-15T11:16:51Z INFO /api/search 200 0.035 127.0.0.1 - Search OK
+2025-12-15T11:16:32Z INFO /ops/delete-task 200 0.142 10.0.0.100 - Task purge requested
+2025-12-15T11:16:39Z INFO /telemetry/ingest 200 0.048 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:16:53Z WARN /telemetry/ingest 429 1.272 192.168.55.12 - Sudden spike in latency
+2025-12-15T11:16:56Z INFO /api/search 200 0.028 10.30.0.12 - Search OK
+2025-12-15T11:16:12Z WARN /proc/fuel 429 1.120 10.30.0.12 - Sudden spike in latency
+2025-12-15T11:16:06Z INFO /crew/status 200 0.166 10.30.0.12 - Crew heartbeats OK
+2025-12-15T11:16:56Z INFO /crew/status 200 0.082 10.0.0.100 - Crew heartbeats OK
+2025-12-15T11:16:02Z INFO /api/login 200 0.055 192.168.55.12 - Login OK
+2025-12-15T11:16:50Z INFO /sensor/upload 200 0.139 192.168.1.10 - Gyro data packet received
+2025-12-15T11:16:15Z INFO /sensor/upload 200 0.073 10.21.7.8 - Gyro data packet received
+2025-12-15T11:16:33Z INFO /api/search 200 0.115 10.21.7.8 - Search OK
+2025-12-15T11:16:37Z INFO /telemetry/ingest 200 0.066 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:16:38Z INFO /compute/node 200 0.104 172.20.5.20 - GPU batch processed
+2025-12-15T11:16:39Z INFO /sensor/upload 200 0.201 192.168.55.12 - Gyro data packet received
+2025-12-15T11:16:38Z WARN /api/search 400 2.889 127.0.0.1 - Sudden spike in latency
+2025-12-15T11:16:23Z INFO /sensor/upload 200 0.102 172.20.5.20 - Gyro data packet received
+2025-12-15T11:16:14Z INFO /sensor/upload 200 0.112 192.168.1.10 - Gyro data packet received
+2025-12-15T11:16:12Z INFO /crew/status 200 0.165 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:16:35Z INFO /sensor/upload 200 0.198 172.20.5.20 - Gyro data packet received
+2025-12-15T11:16:52Z INFO /telemetry/ingest 200 0.127 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:16:46Z INFO /crew/status 200 0.114 10.21.7.8 - Crew heartbeats OK
+2025-12-15T11:16:32Z INFO /telemetry/ingest 200 0.009 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:16:53Z INFO /sensor/upload 200 0.038 172.31.8.90 - Gyro data packet received
+2025-12-15T11:16:22Z INFO /api/login 200 0.115 10.21.3.4 - Login OK
+2025-12-15T11:16:16Z INFO /compute/node 200 0.188 127.0.0.1 - GPU batch processed
+2025-12-15T11:16:46Z INFO /api/search 200 0.130 172.16.9.20 - Search OK
+2025-12-15T11:16:13Z INFO /crew/status 200 0.087 10.21.3.4 - Crew heartbeats OK
+2025-12-15T11:16:36Z WARN /telemetry/ingest 429 2.008 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:16:38Z INFO /ops/delete-task 200 0.014 172.31.8.90 - Task purge requested
+2025-12-15T11:16:30Z INFO /crew/status 200 0.139 10.21.7.8 - Crew heartbeats OK
+2025-12-15T11:15:58Z INFO /telemetry/ingest 200 0.171 172.31.8.90 - Stream heartbeat OK
+2025-12-15T11:16:49Z INFO /api/search 200 0.080 192.168.1.10 - Search OK
+2025-12-15T11:16:05Z INFO /api/login 200 0.161 10.21.3.4 - Login OK
+2025-12-15T11:16:52Z INFO /sensor/upload 200 0.126 172.20.5.20 - Gyro data packet received
+2025-12-15T11:16:21Z INFO /telemetry/ingest 200 0.182 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:16:02Z INFO /sensor/upload 200 0.200 127.0.0.1 - Gyro data packet received
+2025-12-15T11:16:50Z INFO /ops/delete-task 200 0.160 10.21.3.4 - Task purge requested
+2025-12-15T11:16:49Z INFO /sensor/upload 200 0.007 192.168.1.10 - Gyro data packet received
+2025-12-15T11:16:22Z INFO /api/search 200 0.180 10.21.7.8 - Search OK
+2025-12-15T11:16:31Z INFO /crew/status 200 0.157 172.31.8.90 - Crew heartbeats OK
+2025-12-15T11:16:16Z INFO /telemetry/ingest 200 0.246 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:16:57Z INFO /crew/status 200 0.029 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:16:46Z ERROR /telemetry/ingest 400 3.249 10.21.7.8 - Lost sync / Relay timeout
+2025-12-15T11:16:51Z INFO /api/search 200 0.140 172.16.9.20 - Search OK
+2025-12-15T11:16:34Z INFO /ops/diagnostics 200 0.170 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:16:34Z INFO /proc/fuel 200 0.154 10.0.0.100 - Fuel telemetry OK
+2025-12-15T11:16:02Z WARN /proc/fuel 429 2.705 192.168.1.10 - Sudden spike in latency
+2025-12-15T11:16:10Z INFO /api/login 200 0.106 172.20.5.20 - Login OK
+2025-12-15T11:16:11Z INFO /telemetry/ingest 200 0.094 127.0.0.1 - Stream heartbeat OK
+2025-12-15T11:16:31Z INFO /proc/fuel 200 0.057 10.0.0.100 - Fuel telemetry OK
+2025-12-15T11:16:56Z ERROR /api/login 500 0.272 172.16.9.20 - Service down
+2025-12-15T11:16:25Z INFO /telemetry/ingest 200 0.125 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:16:10Z INFO /compute/node 200 0.070 192.168.55.12 - GPU batch processed
+2025-12-15T11:16:44Z INFO /sensor/upload 200 0.133 192.168.1.10 - Gyro data packet received
+2025-12-15T11:16:10Z INFO /ops/delete-task 200 0.159 172.31.8.90 - Task purge requested
+2025-12-15T11:16:26Z INFO /ops/delete-task 200 0.149 172.31.8.90 - Task purge requested
+2025-12-15T11:16:51Z INFO /api/search 200 0.227 172.20.5.20 - Search OK
+2025-12-15T11:16:46Z ERROR /telemetry/ingest 502 2.704 192.168.1.10 - Lost sync / Relay timeout
+2025-12-15T11:16:40Z INFO /telemetry/ingest 200 0.043 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:21Z INFO /compute/node 200 0.130 172.16.9.20 - GPU batch processed
+2025-12-15T11:16:46Z INFO /telemetry/ingest 200 0.124 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:16:39Z INFO /api/search 200 0.167 127.0.0.1 - Search OK
+2025-12-15T11:16:22Z WARN /ops/diagnostics 200 2.993 10.21.3.4 - Sudden spike in latency
+2025-12-15T11:16:27Z ERROR /api/login 500 0.278 172.16.9.20 - Invalid operator PIN
+2025-12-15T11:16:11Z INFO /api/login 200 0.196 10.0.0.100 - Login OK
+2025-12-15T11:16:46Z INFO /api/search 200 0.187 172.20.5.20 - Search OK
+2025-12-15T11:16:06Z INFO /api/search 200 0.117 172.20.5.20 - Search OK
+2025-12-15T11:16:37Z INFO /telemetry/ingest 200 0.324 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:16:25Z INFO /proc/fuel 200 0.113 10.30.0.12 - Fuel telemetry OK
+2025-12-15T11:16:20Z INFO /telemetry/ingest 200 0.085 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:45Z INFO /telemetry/ingest 200 0.018 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:16:17Z INFO /ops/diagnostics 200 0.092 172.20.5.20 - System diagnostics triggered
+2025-12-15T11:16:12Z INFO /telemetry/ingest 200 0.081 10.0.0.100 - Stream heartbeat OK
+2025-12-15T11:16:57Z INFO /compute/node 200 0.254 192.168.55.12 - GPU batch processed
+2025-12-15T11:16:41Z INFO /api/search 200 0.141 10.21.7.8 - Search OK
+2025-12-15T11:16:26Z ERROR /api/login 500 0.127 192.168.55.12 - Invalid operator PIN
+2025-12-15T11:16:18Z INFO /compute/node 200 0.115 10.30.0.12 - GPU batch processed
+2025-12-15T11:16:15Z INFO /ops/delete-task 200 0.021 172.20.5.20 - Task purge requested
+2025-12-15T11:16:50Z INFO /compute/node 200 0.110 10.30.0.12 - GPU batch processed
+2025-12-15T11:16:43Z INFO /api/search 200 0.127 172.20.5.20 - Search OK
+2025-12-15T11:16:30Z INFO /proc/fuel 200 0.175 192.168.55.12 - Fuel telemetry OK
+2025-12-15T11:16:31Z INFO /telemetry/ingest 200 0.107 10.30.0.12 - Stream heartbeat OK
+2025-12-15T11:16:13Z INFO /telemetry/ingest 200 0.138 192.168.1.10 - Stream heartbeat OK
+2025-12-15T11:16:51Z INFO /api/login 200 0.007 10.21.7.8 - Login OK
+2025-12-15T11:16:56Z INFO /crew/status 200 0.165 192.168.55.12 - Crew heartbeats OK
+2025-12-15T11:16:16Z INFO /api/login 200 0.135 172.16.9.20 - Login OK
+2025-12-15T11:16:34Z INFO /sensor/upload 200 0.056 172.20.5.20 - Gyro data packet received
+2025-12-15T11:16:23Z INFO /api/login 200 0.032 10.0.0.100 - Login OK
+2025-12-15T11:16:04Z INFO /api/search 200 0.090 10.0.0.100 - Search OK
+2025-12-15T11:16:29Z INFO /telemetry/ingest 200 0.113 172.20.5.20 - Stream heartbeat OK
+2025-12-15T11:15:59Z INFO /telemetry/ingest 200 0.117 10.21.7.8 - Stream heartbeat OK
+2025-12-15T11:16:07Z INFO /sensor/upload 200 0.156 127.0.0.1 - Gyro data packet received
+2025-12-15T11:15:58Z INFO /api/search 200 0.153 10.0.0.100 - Search OK
+2025-12-15T11:17:33Z INFO /api/login 200 0.075 10.21.3.4 - Login OK
+2025-12-15T11:17:21Z INFO /telemetry/ingest 200 0.130 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:17:35Z INFO /api/search 200 0.090 10.21.3.4 - Search OK
+2025-12-15T11:17:17Z INFO /relay/marslink 200 0.083 10.21.3.4 - Relay ok
+2025-12-15T11:17:10Z INFO /ops/diagnostics 200 0.115 10.21.3.4 - System diagnostics triggered
+2025-12-15T11:17:42Z INFO /telemetry/ingest 200 0.098 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:17:16Z INFO /api/search 200 0.169 10.21.3.4 - Search OK
+2025-12-15T11:17:48Z INFO /ops/delete-task 200 0.024 10.21.3.4 - Task purge requested
+2025-12-15T11:17:17Z INFO /compute/node 200 0.164 10.21.3.4 - GPU batch processed
+2025-12-15T11:17:39Z INFO /telemetry/ingest 200 0.048 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:17:48Z INFO /api/search 200 0.167 10.21.3.4 - Search OK
+2025-12-15T11:17:39Z INFO /api/search 200 0.073 10.21.3.4 - Search OK
+2025-12-15T11:17:43Z INFO /api/search 200 0.143 10.21.3.4 - Search OK
+2025-12-15T11:17:38Z INFO /telemetry/ingest 200 0.152 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:17:36Z INFO /proc/fuel 200 0.053 10.21.3.4 - Fuel telemetry OK
+2025-12-15T11:17:14Z INFO /api/login 200 0.036 10.21.3.4 - Login OK
+2025-12-15T11:17:47Z INFO /telemetry/ingest 200 0.225 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:17:40Z INFO /telemetry/ingest 200 0.013 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:17:05Z INFO /telemetry/ingest 200 0.180 10.21.3.4 - Stream heartbeat OK
+2025-12-15T11:17:14Z INFO /compute/node 200 0.188 10.21.3.4 - GPU batch processed
+2025-12-15T11:17:36Z INFO /ops/delete-task 200 0.226 10.21.7.8 - Task purge requested
+2025-12-15T11:17:13Z INFO /proc/fuel 200 0.031 192.168.1.10 - Fuel telemetry OK
+2025-12-15T11:17:25Z INFO /crew/status 200 0.113 192.168.1.10 - Crew heartbeats OK
+2025-12-15T11:17:30Z INFO /api/login 200 0.018 172.16.9.20 - Login OK
+2025-12-15T11:17:28Z INFO /telemetry/ingest 200 0.147 192.168.55.12 - Stream heartbeat OK
+2025-12-15T11:17:33Z INFO /api/search 200 0.099 10.21.3.4 - Search OK
+2025-12-15T11:17:25Z INFO /telemetry/ingest 200 0.166 172.16.9.20 - Stream heartbeat OK
+2025-12-15T11:17:55Z INFO /api/login 200 0.169 10.30.0.12 - Login OK
+2025-12-15T11:17:38Z INFO /sensor/upload 200 0.028 192.168.55.12 - Gyro data packet received
+2025-12-15T11:17:00Z INFO /ops/diagnostics 200 0.205 172.31.8.90 - System diagnostics triggered
+2025-12-15T11:16:58Z INFO /api/search 200 0.105 10.21.3.4 - Search OK
+2025-12-15T11:17:32Z INFO /api/search 200 0.136 10.0.0.100 - Search OK
