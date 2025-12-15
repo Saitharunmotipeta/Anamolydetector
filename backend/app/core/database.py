@@ -4,7 +4,8 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 
 # FORCE LOAD .env
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "../../.env"))
+from dotenv import load_dotenv
+load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 print("DATABASE_URL LOADED =", DATABASE_URL)  # DEBUG
