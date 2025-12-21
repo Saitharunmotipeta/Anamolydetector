@@ -14,7 +14,6 @@ type Anomaly = {
 
 export default function RecentAnomalies() {
   const [items, setItems] = useState<Anomaly[]>([]);
-<<<<<<< HEAD
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -36,12 +35,6 @@ export default function RecentAnomalies() {
     };
 
     fetchAnomalies();
-=======
-
-  useEffect(() => {
-    api.get("/anomalies/")
-      .then(res => setItems(res.data.slice(0, 8)));
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0
   }, []);
 
   return (
@@ -50,7 +43,6 @@ export default function RecentAnomalies() {
         Recent Anomalies
       </h3>
 
-<<<<<<< HEAD
       {loading && (
         <div className="text-sm text-gray-400">Loading…</div>
       )}
@@ -100,43 +92,11 @@ export default function RecentAnomalies() {
           </table>
         </div>
       )}
-=======
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="text-left text-gray-500 border-b">
-              <th className="pb-2">Time</th>
-              <th className="pb-2">Type</th>
-              <th className="pb-2">Severity</th>
-              <th className="pb-2">Message</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {items.map(a => (
-              <tr key={a.id} className="border-b last:border-0">
-                <td className="py-2 text-gray-400">
-                  {new Date(a.timestamp).toLocaleString()}
-                </td>
-                <td className="py-2">{a.type}</td>
-                <td className={`py-2 font-medium ${severityColor(a.severity)}`}>
-                  {a.severity}
-                </td>
-                <td className="py-2 text-gray-500 truncate max-w-[300px]">
-                  {a.message || "-"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0
     </div>
   );
 }
 
 function severityColor(sev: string) {
-<<<<<<< HEAD
   switch (sev) {
     case "critical":
       return "text-red-600";
@@ -147,10 +107,4 @@ function severityColor(sev: string) {
     default:
       return "text-green-600";
   }
-=======
-  if (sev === "critical") return "text-red-600";
-  if (sev === "high") return "text-orange-500";
-  if (sev === "medium") return "text-yellow-500";
-  return "text-green-600";
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0
 }

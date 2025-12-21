@@ -17,7 +17,6 @@ export default function MetricsPage() {
   const [trendData, setTrendData] = useState<any[]>([]);
 
   useEffect(() => {
-<<<<<<< HEAD
     // SUMMARY
     api.get("/metrics/summary")
       .then(res => setSummary(res.data))
@@ -66,23 +65,6 @@ export default function MetricsPage() {
         );
       })
       .catch(console.error);
-=======
-    api.get("/metrics/summary").then(res => setSummary(res.data));
-    api.get("/metrics/top-errors").then(res => setTopErrors(res.data));
-
-    api.get("/anomalies/").then(res => {
-      const sevCount: any = { low: 0, medium: 0, high: 0, critical: 0 };
-      res.data.forEach((a: any) => sevCount[a.severity]++);
-      setSeverityData(Object.entries(sevCount).map(([k, v]) => ({ name: k, value: v })));
-
-      // fake time buckets (static trend for now)
-      const buckets = res.data.slice(0, 20).map((_: any, i: number) => ({
-        time: `T${i + 1}`,
-        errors: Math.floor(Math.random() * 10) + 1
-      }));
-      setTrendData(buckets);
-    });
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0
   }, []);
 
   return (
@@ -93,7 +75,6 @@ export default function MetricsPage() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
         <KPI title="Total Logs" value={summary?.total_logs} color="indigo" />
         <KPI title="Errors" value={summary?.error_count} color="red" />
-<<<<<<< HEAD
         <KPI
           title="Error Rate"
           value={`${((summary?.error_rate ?? 0) * 100).toFixed(1)}%`}
@@ -124,25 +105,6 @@ export default function MetricsPage() {
         </ChartCard>
 
 
-=======
-        <KPI title="Error Rate" value={`${(summary?.error_rate ?? 0) * 100}%`} color="yellow" />
-        <KPI title="Avg Response Time" value={`${summary?.avg_response_time} ms`} color="green" />
-      </div>
-
-      {/* Charts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <ChartCard title="Top Error Endpoints">
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={topErrors}>
-              <XAxis dataKey="endpoint" hide />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="error_count" fill="#6366F1" radius={[6,6,0,0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
-
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0
         <ChartCard title="Severity Distribution">
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
@@ -168,13 +130,7 @@ export default function MetricsPage() {
         </ChartCard>
 
         <ChartCard title="Power BI (Coming Soon)">
-<<<<<<< HEAD
           <Empty />
-=======
-          <div className="h-full flex items-center justify-center text-gray-400">
-            Power BI iframe will be embedded here
-          </div>
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0
         </ChartCard>
       </div>
     </div>
@@ -188,7 +144,6 @@ function KPI({ title, value, color }: any) {
     yellow: "text-yellow-500",
     green: "text-green-500",
   };
-<<<<<<< HEAD
 
   return (
     <div className="bg-white rounded-xl shadow-sm p-5">
@@ -196,12 +151,6 @@ function KPI({ title, value, color }: any) {
       <div className={`text-2xl font-bold mt-2 ${colors[color]}`}>
         {value ?? "--"}
       </div>
-=======
-  return (
-    <div className="bg-white rounded-xl shadow-sm p-5">
-      <div className="text-sm text-gray-500">{title}</div>
-      <div className={`text-2xl font-bold mt-2 ${colors[color]}`}>{value ?? "--"}</div>
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0
     </div>
   );
 }
@@ -214,7 +163,6 @@ function ChartCard({ title, children }: any) {
     </div>
   );
 }
-<<<<<<< HEAD
 
 function Empty() {
   return (
@@ -223,5 +171,3 @@ function Empty() {
     </div>
   );
 }
-=======
->>>>>>> 858ccf2b568952ec8950d55af1c561aab0079db0

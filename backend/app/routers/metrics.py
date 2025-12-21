@@ -19,10 +19,14 @@ def daily_metrics(db: Session = Depends(get_db)):
 
 
 @router.get("/top-errors")
-def top_errors(db: Session = Depends(get_db)):
+def top_errors(
+    hours: int | None = None,
+    db: Session = Depends(get_db)
+):
     return {
-        "data": get_top_errors(db)
+        "data": get_top_errors(db, hours=hours)
     }
+
 
 
 @router.get("/top-anomalies")

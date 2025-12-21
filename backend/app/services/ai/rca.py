@@ -23,14 +23,34 @@ def _metric_to_dict(m: Metric):
     }
 
 
-def _format_context(db: Session):
+def _format_context(
+    db: Session,
+    testing: bool = False,
+    lookback_minutes: int = 60
+):
     if testing:
         logs = db.query(Log).order_by(Log.timestamp.asc()).all()
     else:
-        logs = db.query(Log).filter(Log.timestamp >= since).all()
+        since = datetime.utcnow() - timedelta(minutes=lookback_minutes)
+        logs = (
+            db.query(Log)
+            .filter(Log.timestamp >= since)
+            .order_by(Log.timestamp.asc())
+            .all()
+        )
 
-    anomalies = db.query(Anomaly).order_by(Anomaly.timestamp.desc()).limit(50).all()
-    metric = db.query(Metric).order_by(Metric.timestamp.desc()).first()
+    anomalies = (
+        db.query(Anomaly)
+        .order_by(Anomaly.timestamp.desc())
+        .limit(50)
+        .all()
+    )
+
+    metric = (
+        db.query(Metric)
+        .order_by(Metric.timestamp.desc())
+        .first()
+    )
 
     ctx_logs = "\n".join(
         f"[{l.timestamp}] {l.level} {l.endpoint} - {l.message}"
@@ -88,10 +108,12 @@ def call_openrouter(prompt: str):
         return {"error": "Missing 'choices' key", "raw": result}
 
 
-def run_root_cause_analysis(db: Session):
-    context = _format_context(db)
+def run_root_cause_analysis(
+    db: Session,
+    testing: bool = False
+):
+    context = _format_context(db, testing=testing)
 
-    # DO NOT USE f-string because JSON braces break formatting
     prompt = """
 You are an advanced SRE / Observability Engineer.
 Analyze the system health based on logs, anomalies, and metrics.
@@ -118,13 +140,11 @@ Return a JSON-like structure EXACTLY like this:
 }}
 """.format(context=context)
 
-    # first attempt
     result = call_openrouter(prompt)
 
     if isinstance(result, dict) and "error" in result:
         return result
 
-    # retry if blank
     if not result or str(result).strip() == "":
         retry_prompt = prompt + "\nSTRICT MODE: Provide meaningful analysis even if data is limited."
         result_retry = call_openrouter(retry_prompt)

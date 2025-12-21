@@ -2,6 +2,7 @@ import re
 from datetime import datetime
 from typing import List, Dict
 
+
 # FULL FORMAT (with IP + message)
 FULL_PATTERN = re.compile(
     r'(?P<timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)\s+'
@@ -21,10 +22,11 @@ SHORT_PATTERN = re.compile(
     r'(?P<response_time>[0-9.]+)$'
 )
 
-def parse_log_line(line: str) -> Dict:
+
+def parse_log_line(line: str) -> Dict | None:
     text = line.strip()
 
-    # 1️⃣ Try full match
+    # 1️⃣ Full structured log
     m = FULL_PATTERN.match(text)
     if m:
         gd = m.groupdict()
@@ -38,7 +40,7 @@ def parse_log_line(line: str) -> Dict:
             "message": gd["message"],
         }
 
-    # 2️⃣ Try short match
+    # 2️⃣ Short structured log
     m2 = SHORT_PATTERN.match(text)
     if m2:
         gd = m2.groupdict()
@@ -52,11 +54,13 @@ def parse_log_line(line: str) -> Dict:
             "message": None,
         }
 
-    # 3️⃣ Fallback (garbage or comment lines)
+    # 3️⃣ Comment / ignorable line
     if text.startswith("#"):
-        return None  # skip comment lines
+        return None
 
+    # 4️⃣ Fallback garbage-safe parse
     parts = text.split(" ", 3)
+
     return {
         "timestamp": datetime.utcnow(),
         "level": parts[1] if len(parts) > 1 else "INFO",
@@ -70,10 +74,13 @@ def parse_log_line(line: str) -> Dict:
 
 def parse_log_file(text: str) -> List[Dict]:
     parsed = []
+
     for line in text.splitlines():
         if not line.strip():
             continue
+
         item = parse_log_line(line)
         if item:
             parsed.append(item)
+
     return parsed

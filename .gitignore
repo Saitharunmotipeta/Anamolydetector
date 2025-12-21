@@ -84,6 +84,8 @@ build/
 Thumbs.db
 
 # Large raw data (never commit)
+data/
+data/**
 data/raw/*.log
 data/raw/*.zip
 data/raw/*.csv
