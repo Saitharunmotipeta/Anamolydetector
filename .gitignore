@@ -1,0 +1,95 @@
+# =========================
+# Frontend (Node / Next.js)
+# =========================
+
+# dependencies
+/frontend/node_modules/
+ /.pnp
+.pnp.*
+/.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/frontend/.next/
+/frontend/out/
+
+# production
+/frontend/build/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# vercel
+/frontend/.vercel/
+
+
+# =========================
+# Backend (Python)
+# =========================
+
+# Python cache
+/backend/**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+/backend/venv/
+
+
+# =========================
+# Environment files
+# =========================
+
+# root env (shared backend/frontend config)
+.env
+
+# local env overrides
+.env.local
+
+
+# =========================
+# Misc / OS
+# =========================
+
+.DS_Store
+Thumbs.db
+*.pem
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+
+# ===== Node =====
+node_modules/
+.next/
+build/
+
+# ===== Env =====
+.env
+.env.*
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# Large raw data (never commit)
+data/
+data/**
+data/raw/*.log
+data/raw/*.zip
+data/raw/*.csv
+
+# General archives
+*.zip
+*.log

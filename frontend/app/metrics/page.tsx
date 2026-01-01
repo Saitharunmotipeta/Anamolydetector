@@ -1,118 +1,202 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { api } from "@/lib/api";
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell,
-  LineChart, Line
-} from "recharts";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
 
-const COLORS = ["#6366F1", "#F59E0B", "#EF4444", "#22C55E"];
+type DailyMetrics = {
+  total_logs: number;
+  error_count: number;
+  avg_response_time: number;
+  error_rate: number;
+  severity: {
+    low: number;
+    medium: number;
+    high: number;
+    critical: number;
+  };
+};
+
+type TopError = {
+  endpoint: string;
+  error_count: number;
+  error_percent: number;
+};
+
+type AnomalyType = {
+  type: string;
+  count: number;
+  percent: number;
+};
+
+type SlowEndpoint = {
+  endpoint: string;
+  avg: number;
+  p95: number;
+  count: number;
+};
 
 export default function MetricsPage() {
-  const [summary, setSummary] = useState<any>(null);
-  const [topErrors, setTopErrors] = useState<any[]>([]);
-  const [severityData, setSeverityData] = useState<any[]>([]);
-  const [trendData, setTrendData] = useState<any[]>([]);
+  const [daily, setDaily] = useState<DailyMetrics | null>(null);
+  const [topErrors, setTopErrors] = useState<TopError[]>([]);
+  const [anomalies, setAnomalies] = useState<AnomalyType[]>([]);
+  const [slowest, setSlowest] = useState<SlowEndpoint[]>([]);
 
   useEffect(() => {
-    api.get("/metrics/summary").then(res => setSummary(res.data));
-    api.get("/metrics/top-errors").then(res => setTopErrors(res.data));
+    fetch("http://localhost:8000/metrics/daily")
+      .then(res => res.json())
+      .then(setDaily);
 
-    api.get("/anomalies/").then(res => {
-      const sevCount: any = { low: 0, medium: 0, high: 0, critical: 0 };
-      res.data.forEach((a: any) => sevCount[a.severity]++);
-      setSeverityData(Object.entries(sevCount).map(([k, v]) => ({ name: k, value: v })));
+    fetch("http://localhost:8000/metrics/top-errors")
+      .then(res => res.json())
+      .then(setTopErrors);
 
-      // fake time buckets (static trend for now)
-      const buckets = res.data.slice(0, 20).map((_: any, i: number) => ({
-        time: `T${i + 1}`,
-        errors: Math.floor(Math.random() * 10) + 1
-      }));
-      setTrendData(buckets);
-    });
+    fetch("http://localhost:8000/metrics/top-anomalies")
+      .then(res => res.json())
+      .then(setAnomalies);
+
+    fetch("http://localhost:8000/metrics/slowest")
+      .then(res => res.json())
+      .then(setSlowest);
   }, []);
 
   return (
-    <div>
-      <h1 className="text-2xl font-semibold mb-6">Metrics & Analysis</h1>
+    <div className="flex h-screen bg-slate-100">
+      {/* SIDEBAR */}
 
-      {/* KPI */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
-        <KPI title="Total Logs" value={summary?.total_logs} color="indigo" />
-        <KPI title="Errors" value={summary?.error_count} color="red" />
-        <KPI title="Error Rate" value={`${(summary?.error_rate ?? 0) * 100}%`} color="yellow" />
-        <KPI title="Avg Response Time" value={`${summary?.avg_response_time} ms`} color="green" />
-      </div>
+      {/* MAIN CONTENT */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <Navbar />
 
-      {/* Charts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <ChartCard title="Top Error Endpoints">
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={topErrors}>
-              <XAxis dataKey="endpoint" hide />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="error_count" fill="#6366F1" radius={[6,6,0,0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
+        <main className="flex-1 overflow-y-auto p-8 space-y-8">
 
-        <ChartCard title="Severity Distribution">
-          <ResponsiveContainer width="100%" height={250}>
-            <PieChart>
-              <Pie data={severityData} dataKey="value" nameKey="name" outerRadius={90}>
-                {severityData.map((_, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
+          {/* KPI CARDS */}
+          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <MetricCard title="Total Logs" value={daily?.total_logs} />
+            <MetricCard title="Errors" value={daily?.error_count} />
+            <MetricCard
+              title="Error Rate"
+              value={daily ? `${(daily.error_rate * 100).toFixed(2)}%` : "-"}
+            />
+            <MetricCard
+              title="Avg Response Time"
+              value={daily ? `${daily.avg_response_time.toFixed(2)} ms` : "-"}
+            />
+          </section>
+
+          {/* SEVERITY DISTRIBUTION */}
+          <section className="bg-white rounded-xl p-6 shadow">
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">
+              Severity Distribution
+            </h2>
+
+            {daily && (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <SeverityBox label="Low" value={daily.severity.low} color="green" />
+                <SeverityBox label="Medium" value={daily.severity.medium} color="yellow" />
+                <SeverityBox label="High" value={daily.severity.high} color="orange" />
+                <SeverityBox label="Critical" value={daily.severity.critical} color="red" />
+              </div>
+            )}
+          </section>
+
+          {/* TOP ERROR ENDPOINTS */}
+          <section className="bg-white rounded-xl p-6 shadow">
+            <h2 className="text-lg font-semibold text-slate-800 mb-4">
+              Top Error Endpoints
+            </h2>
+
+            <table className="w-full text-sm">
+              <thead className="text-left text-slate-500 border-b">
+                <tr>
+                  <th className="py-2">Endpoint</th>
+                  <th>Error Count</th>
+                  <th>Error %</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topErrors.map((e, i) => (
+                  <tr key={i} className="border-b last:border-0">
+                    <td className="py-2 font-mono">{e.endpoint}</td>
+                    <td>{e.error_count}</td>
+                    <td>{(e.error_percent * 100).toFixed(2)}%</td>
+                  </tr>
                 ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-        </ChartCard>
+              </tbody>
+            </table>
+          </section>
 
-        <ChartCard title="Error Trend">
-          <ResponsiveContainer width="100%" height={250}>
-            <LineChart data={trendData}>
-              <XAxis dataKey="time" />
-              <YAxis />
-              <Tooltip />
-              <Line type="monotone" dataKey="errors" stroke="#EF4444" strokeWidth={3} />
-            </LineChart>
-          </ResponsiveContainer>
-        </ChartCard>
+          {/* ANOMALY TYPES + SLOW ENDPOINTS */}
+          <section className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
-        <ChartCard title="Power BI (Coming Soon)">
-          <div className="h-full flex items-center justify-center text-gray-400">
-            Power BI iframe will be embedded here
-          </div>
-        </ChartCard>
+            {/* ANOMALY TYPES */}
+            <div className="bg-white rounded-xl p-6 shadow">
+              <h2 className="text-lg font-semibold text-slate-800 mb-4">
+                Frequent Anomaly Types
+              </h2>
+
+              {anomalies.map((a, i) => (
+                <div key={i} className="flex justify-between py-2 border-b last:border-0">
+                  <span>{a.type}</span>
+                  <span className="font-medium">{a.count}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* SLOW ENDPOINTS */}
+            <div className="bg-white rounded-xl p-6 shadow">
+              <h2 className="text-lg font-semibold text-slate-800 mb-4">
+                Slowest Endpoints
+              </h2>
+
+              {slowest.map((s, i) => (
+                <div key={i} className="flex justify-between py-2 border-b last:border-0">
+                  <span className="font-mono">{s.endpoint}</span>
+                  <span>{s.avg} ms (p95)</span>
+                </div>
+              ))}
+            </div>
+
+          </section>
+        </main>
       </div>
     </div>
   );
 }
 
-function KPI({ title, value, color }: any) {
-  const colors: any = {
-    indigo: "text-indigo-600",
-    red: "text-red-500",
-    yellow: "text-yellow-500",
-    green: "text-green-500",
-  };
+/* ------------------ UI COMPONENTS ------------------ */
+
+function MetricCard({ title, value }: { title: string; value: any }) {
   return (
-    <div className="bg-white rounded-xl shadow-sm p-5">
-      <div className="text-sm text-gray-500">{title}</div>
-      <div className={`text-2xl font-bold mt-2 ${colors[color]}`}>{value ?? "--"}</div>
+    <div className="bg-white rounded-xl p-6 shadow">
+      <p className="text-sm text-slate-500">{title}</p>
+      <p className="mt-2 text-2xl font-semibold text-slate-800">
+        {value ?? "-"}
+      </p>
     </div>
   );
 }
 
-function ChartCard({ title, children }: any) {
+function SeverityBox({
+  label,
+  value,
+  color,
+}: {
+  label: string;
+  value: number;
+  color: "green" | "yellow" | "orange" | "red";
+}) {
+  const colors: any = {
+    green: "bg-green-50 text-green-700",
+    yellow: "bg-yellow-50 text-yellow-700",
+    orange: "bg-orange-50 text-orange-700",
+    red: "bg-red-50 text-red-700",
+  };
+
   return (
-    <div className="bg-white rounded-xl shadow-sm p-5">
-      <h3 className="text-sm font-medium mb-4">{title}</h3>
-      {children}
+    <div className={`rounded-lg p-4 ${colors[color]}`}>
+      <p className="text-sm">{label}</p>
+      <p className="text-xl font-semibold">{value}</p>
     </div>
   );
 }
