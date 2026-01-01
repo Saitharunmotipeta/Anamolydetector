@@ -1,172 +1,233 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { api } from "@/lib/api";
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell,
-  LineChart, Line
-} from "recharts";
+import Navbar from "../components/Navbar";
+import { api } from "../lib/api";
 
-const COLORS = ["#6366F1", "#F59E0B", "#EF4444", "#22C55E"];
+// ---------- Types ----------
+type DailyMetrics = {
+  total_logs: number;
+  error_count: number;
+  avg_response_time: number;
+  error_rate: number;
+  severity: {
+    low: number;
+    medium: number;
+    high: number;
+    critical: number;
+  };
+};
+
+type TopError = {
+  endpoint: string;
+  error_count: number;
+  error_percent: number;
+};
+
+type AnomalyType = {
+  type: string;
+  count: number;
+  percent: number;
+};
+
+type SlowEndpoint = {
+  endpoint: string;
+  avg: number;
+  p95: number;
+  count: number;
+};
 
 export default function MetricsPage() {
-  const [summary, setSummary] = useState<any>(null);
-  const [topErrors, setTopErrors] = useState<any[]>([]);
-  const [severityData, setSeverityData] = useState<any[]>([]);
-  const [trendData, setTrendData] = useState<any[]>([]);
+  const [daily, setDaily] = useState<DailyMetrics | null>(null);
+  const [topErrors, setTopErrors] = useState<TopError[]>([]);
+  const [anomalies, setAnomalies] = useState<AnomalyType[]>([]);
+  const [slowest, setSlowest] = useState<SlowEndpoint[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // SUMMARY
-    api.get("/metrics/summary")
-      .then(res => setSummary(res.data))
-      .catch(console.error);
+    async function load() {
+      try {
+        const [d, e, a, s] = await Promise.all([
+          api.get("/metrics/daily"),
+          api.get("/metrics/top-errors"),
+          api.get("/metrics/top-anomalies"),
+          api.get("/metrics/slowest"),
+        ]);
 
-    // TOP ERRORS (NORMALIZED)
-  api.get("/metrics/top-errors")
-    .then(res => {
-      const raw = Array.isArray(res.data?.data)
-        ? res.data.data
-        : [];
+        setDaily(d.data);
 
-      setTopErrors(
-        raw.map((e: any) => ({
-          endpoint: e.endpoint ?? e.path ?? "unknown",
-          error_count: e.error_count ?? e.count ?? 0,
-        }))
-      );
-    });
-
-
-
-    // ANOMALIES → SEVERITY + TREND
-    api.get("/anomalies")
-      .then(res => {
-        const data = Array.isArray(res.data) ? res.data : [];
-
-        const sevCount: Record<string, number> = {
-          low: 0, medium: 0, high: 0, critical: 0,
-        };
-
-        data.forEach(a => {
-          const key = a.severity?.toLowerCase();
-          if (key in sevCount) sevCount[key]++;
-        });
-
-        setSeverityData(
-          Object.entries(sevCount).map(([name, value]) => ({ name, value }))
+        setTopErrors(
+          Array.isArray(e.data?.data)
+            ? e.data.data
+            : []
         );
 
-        setTrendData(
-          data.slice(0, 20).map((_, i) => ({
-            time: `T${i + 1}`,
-            errors: Math.floor(Math.random() * 10) + 1,
-          }))
+        setAnomalies(
+          Array.isArray(a.data) ? a.data : []
         );
-      })
-      .catch(console.error);
+
+        setSlowest(
+          Array.isArray(s.data) ? s.data : []
+        );
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    load();
   }, []);
 
+  if (loading) return <div className="p-10 text-slate-500">Loading metrics…</div>;
+
   return (
-    <div>
-      <h1 className="text-2xl font-semibold mb-6">Metrics & Analysis</h1>
+    <div className="flex h-screen bg-slate-50">
 
-      {/* KPI */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
-        <KPI title="Total Logs" value={summary?.total_logs} color="indigo" />
-        <KPI title="Errors" value={summary?.error_count} color="red" />
-        <KPI
-          title="Error Rate"
-          value={`${((summary?.error_rate ?? 0) * 100).toFixed(1)}%`}
-          color="yellow"
-        />
-        <KPI
-          title="Avg Response Time"
-          value={summary?.avg_response_time ? `${summary.avg_response_time} ms` : "--"}
-          color="green"
-        />
-      </div>
+      {/* MAIN */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <Navbar />
 
-      {/* Charts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-blue-700">
-        <ChartCard title="Errors by Severity" >
-          {severityData.length === 0 ? (
-            <Empty />
-          ) : (
-            <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={severityData}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="value" fill="#EF4444" radius={[6, 6, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          )}
-        </ChartCard>
+        <main className="flex-1 overflow-y-auto p-8 space-y-8">
 
+          {/* KPI */}
+          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <KPI title="Total Logs" value={daily?.total_logs} />
+            <KPI title="Errors" value={daily?.error_count} />
+            <KPI
+              title="Error Rate"
+              value={daily ? `${(daily.error_rate * 100).toFixed(2)}%` : "-"}
+            />
+            <KPI
+              title="Avg Response Time"
+              value={daily ? `${daily.avg_response_time.toFixed(2)} ms` : "-"}
+            />
+          </section>
 
-        <ChartCard title="Severity Distribution">
-          <ResponsiveContainer width="100%" height={250}>
-            <PieChart>
-              <Pie data={severityData} dataKey="value" nameKey="name" outerRadius={90}>
-                {severityData.map((_, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-        </ChartCard>
+          {/* SEVERITY */}
+          <Card title="Severity Distribution">
+            {daily ? (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+                <Severity label="Low" value={daily.severity.low} tone="green" />
+                <Severity label="Medium" value={daily.severity.medium} tone="amber" />
+                <Severity label="High" value={daily.severity.high} tone="orange" />
+                <Severity label="Critical" value={daily.severity.critical} tone="red" />
+              </div>
+            ) : (
+              <Empty />
+            )}
+          </Card>
 
-        <ChartCard title="Error Trend">
-          <ResponsiveContainer width="100%" height={250}>
-            <LineChart data={trendData}>
-              <XAxis dataKey="time" />
-              <YAxis />
-              <Tooltip />
-              <Line type="monotone" dataKey="errors" stroke="#EF4444" strokeWidth={3} />
-            </LineChart>
-          </ResponsiveContainer>
-        </ChartCard>
+          {/* TABLES */}
+          <section className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
-        <ChartCard title="Power BI (Coming Soon)">
-          <Empty />
-        </ChartCard>
+            <Card title="Top Error Endpoints">
+              {topErrors.length ? (
+                <table className="w-full text-sm">
+                  <thead className="text-slate-500 border-b">
+                    <tr>
+                      <th className="py-2 text-left">Endpoint</th>
+                      <th className="text-left">Errors</th>
+                      <th className="text-left">Error %</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {topErrors.map((e, i) => (
+                      <tr key={i} className="border-b last:border-0">
+                        <td className="py-2 font-mono">{e.endpoint}</td>
+                        <td>{e.error_count}</td>
+                        <td>{(e.error_percent * 100).toFixed(2)}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <Empty />
+              )}
+            </Card>
+
+            <Card title="Slowest Endpoints">
+              {slowest.length ? (
+                slowest.map((s, i) => (
+                  <div key={i} className="flex justify-between py-2 border-b last:border-0">
+                    <span className="font-mono">{s.endpoint}</span>
+                    <span>{s.avg} ms (p95)</span>
+                  </div>
+                ))
+              ) : (
+                <Empty />
+              )}
+            </Card>
+
+          </section>
+
+          <Card title="Frequent Anomaly Types">
+            {anomalies.length ? (
+              anomalies.map((a, i) => (
+                <div key={i} className="flex justify-between py-2 border-b last:border-0">
+                  <span>{a.type}</span>
+                  <span className="font-medium">{a.count}</span>
+                </div>
+              ))
+            ) : (
+              <Empty />
+            )}
+          </Card>
+
+        </main>
       </div>
     </div>
   );
 }
 
-function KPI({ title, value, color }: any) {
-  const colors: any = {
-    indigo: "text-indigo-600",
-    red: "text-red-500",
-    yellow: "text-yellow-500",
-    green: "text-green-500",
+/* ---------- UI ---------- */
+
+function KPI({ title, value }: { title: string; value: any }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-sm border p-6">
+      <p className="text-sm text-slate-500">{title}</p>
+      <p className="mt-2 text-3xl font-semibold text-slate-900">
+        {value ?? "-"}
+      </p>
+    </div>
+  );
+}
+
+function Card({ title, children }: any) {
+  return (
+    <div className="bg-white rounded-2xl shadow-sm border p-6">
+      <h2 className="text-lg font-semibold text-slate-900 mb-4">{title}</h2>
+      {children}
+    </div>
+  );
+}
+
+function Severity({
+  label,
+  value,
+  tone,
+}: {
+  label: string;
+  value: number;
+  tone: "green" | "amber" | "orange" | "red";
+}) {
+  const toneMap: any = {
+    green: "bg-green-50 text-green-700 border-green-200",
+    amber: "bg-amber-50 text-amber-700 border-amber-200",
+    orange: "bg-orange-50 text-orange-700 border-orange-200",
+    red: "bg-red-50 text-red-700 border-red-200",
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm p-5">
-      <div className="text-sm text-gray-500">{title}</div>
-      <div className={`text-2xl font-bold mt-2 ${colors[color]}`}>
-        {value ?? "--"}
-      </div>
-    </div>
-  );
-}
-
-function ChartCard({ title, children }: any) {
-  return (
-    <div className="bg-white rounded-xl shadow-sm p-5">
-      <h3 className="text-sm font-medium mb-4">{title}</h3>
-      {children}
+    <div className={`rounded-xl border p-5 ${toneMap[tone]}`}>
+      <p className="text-sm">{label}</p>
+      <p className="text-2xl font-semibold">{value}</p>
     </div>
   );
 }
 
 function Empty() {
   return (
-    <div className="h-[250px] flex items-center justify-center text-gray-400 text-sm">
+    <div className="text-sm text-slate-400 py-6">
       No data available
     </div>
   );

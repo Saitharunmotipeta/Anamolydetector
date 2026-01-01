@@ -8,30 +8,32 @@ from app.models.log import Log
 from app.models.anomaly import Anomaly
 from app.models.metric import Metric
 
-
-# Normalize severity keys
 SEVERITY_KEYS = ["low", "medium", "high", "critical"]
 
 
 # ==========================================================
-# 4.0 — Daily Aggregated Metrics (KPI Card)
+# DAILY KPI — USE ALL LOGS UNLESS days IS PASSED
 # ==========================================================
-def aggregate_metrics(db: Session, days: int = 7):
-    since = datetime.utcnow() - timedelta(days=days)
+def aggregate_metrics(db: Session, days: int | None = None):
 
-    logs = db.query(Log).filter(Log.timestamp >= since).all()
+    query = db.query(Log)
+
+    if days is not None:
+        since = datetime.utcnow() - timedelta(days=days)
+        query = query.filter(Log.timestamp >= since)
+
+    logs = query.all()
     total = len(logs)
 
     if total == 0:
         return {
             "total_logs": 0,
             "error_count": 0,
-            "avg_response_time": 0,
-            "error_rate": 0,
+            "avg_response_time": 0.0,
+            "error_rate": 0.0,
             "severity": {k: 0 for k in SEVERITY_KEYS},
         }
 
-    # classify errors
     errors = [
         l for l in logs
         if l.level and l.level.upper() in ["ERROR", "CRITICAL"]
@@ -42,28 +44,14 @@ def aggregate_metrics(db: Session, days: int = 7):
 
     error_rate = round(len(errors) / total, 4)
 
-    # anomaly severity aggregation
-    anomalies = db.query(Anomaly).filter(Anomaly.timestamp >= since).all()
+    # anomalies for severity
+    anomalies = db.query(Anomaly).all()
     severity_count = {k: 0 for k in SEVERITY_KEYS}
 
     for a in anomalies:
         sev = str(a.severity).lower()
         if sev in severity_count:
             severity_count[sev] += 1
-
-    # persist daily metric snapshot
-    metric = Metric(
-        total_logs=total,
-        error_count=len(errors),
-        avg_response_time=avg_resp,
-        low=severity_count["low"],
-        medium=severity_count["medium"],
-        high=severity_count["high"],
-        critical=severity_count["critical"],
-    )
-
-    db.add(metric)
-    db.commit()
 
     return {
         "total_logs": total,
@@ -75,35 +63,24 @@ def aggregate_metrics(db: Session, days: int = 7):
 
 
 # ==========================================================
-# 4.1 — Top Error Endpoints
+# TOP ERROR ENDPOINTS
 # ==========================================================
-def get_top_errors(
-    db: Session,
-    hours: int | None = None,
-    limit: int = 10
-):
-    """
-    Returns top endpoints producing ERROR / CRITICAL logs.
-    If hours=None → considers full dataset (important for offline log imports).
-    """
+def get_top_errors(db: Session, hours: int | None = None, limit: int = 10):
 
     query = db.query(
         Log.endpoint,
         func.count(Log.id).label("error_count")
     ).filter(
         Log.endpoint.isnot(None),
-        Log.level.isnot(None),
-        Log.level.in_(["ERROR", "CRITICAL"])
+        func.upper(Log.level).in_(["ERROR", "CRITICAL"])
     )
 
-    # ⏱️ Apply time window ONLY if explicitly asked
     if hours is not None:
         since = datetime.utcnow() - timedelta(hours=hours)
         query = query.filter(Log.timestamp >= since)
 
     results = (
-        query
-        .group_by(Log.endpoint)
+        query.group_by(Log.endpoint)
         .order_by(func.count(Log.id).desc())
         .limit(limit)
         .all()
@@ -112,23 +89,30 @@ def get_top_errors(
     if not results:
         return []
 
-    total_errors = sum(r.error_count for r in results)
+    total = sum(r.error_count for r in results)
 
     return [
         {
             "endpoint": r.endpoint,
             "error_count": r.error_count,
-            "error_percent": round(r.error_count / total_errors, 4)
+            "error_percent": round(r.error_count / total, 4)
         }
         for r in results
     ]
 
+
 # ==========================================================
-# 4.2 — Most Frequent Anomaly Types
+# MOST FREQUENT ANOMALY TYPES
 # ==========================================================
-def top_anomaly_endpoints(db: Session, days: int = 7):
-    since = datetime.utcnow() - timedelta(days=days)
-    anomalies = db.query(Anomaly).filter(Anomaly.timestamp >= since).all()
+def top_anomaly_endpoints(db: Session, days: int | None = None):
+
+    query = db.query(Anomaly)
+
+    if days is not None:
+        since = datetime.utcnow() - timedelta(days=days)
+        query = query.filter(Anomaly.timestamp >= since)
+
+    anomalies = query.all()
 
     if not anomalies:
         return []
@@ -143,31 +127,32 @@ def top_anomaly_endpoints(db: Session, days: int = 7):
 
 
 # ==========================================================
-# 4.3 — Downtime Indicators (FIXED)
+# DOWNTIME DETECTION
 # ==========================================================
-def downtime_indicators(db: Session, hours: int = 24):
-    since = datetime.utcnow() - timedelta(hours=hours)
+def downtime_indicators(db: Session, hours: int | None = None):
 
-    logs = db.query(Log).filter(
-        Log.timestamp >= since,
+    query = db.query(Log).filter(
         Log.endpoint.isnot(None),
         Log.level.isnot(None)
-    ).all()
+    )
+
+    if hours is not None:
+        since = datetime.utcnow() - timedelta(hours=hours)
+        query = query.filter(Log.timestamp >= since)
+
+    logs = query.all()
 
     if not logs:
         return []
 
-    endpoint_stats = defaultdict(lambda: {
-        "total": 0,
-        "errors": 0,
-        "criticals": 0
-    })
+    endpoint_stats = defaultdict(lambda: {"total": 0, "errors": 0, "criticals": 0})
 
     for l in logs:
+        lvl = (l.level or "").upper()
         ep = l.endpoint
+
         endpoint_stats[ep]["total"] += 1
 
-        lvl = l.level.upper()
         if lvl == "ERROR":
             endpoint_stats[ep]["errors"] += 1
         elif lvl == "CRITICAL":
@@ -180,45 +165,53 @@ def downtime_indicators(db: Session, hours: int = 24):
         bad = stats["errors"] + stats["criticals"]
 
         if total < 5:
-            continue  # ignore noise
+            continue
 
-        error_ratio = bad / total
+        ratio = bad / total
 
-        if error_ratio >= 0.6:
-            severity = (
-                "critical" if stats["criticals"] >= 2
-                else "high"
-            )
+        if ratio >= 0.6:
+            severity = "critical" if stats["criticals"] >= 2 else "high"
 
             results.append({
                 "endpoint": ep,
                 "total_requests": total,
                 "error_count": bad,
-                "error_ratio": round(error_ratio, 3),
+                "error_ratio": round(ratio, 3),
                 "severity": severity,
                 "message": "Service likely experiencing downtime"
             })
 
     return results
 
-# ==========================================================
-# 4.4 — Slowest Endpoints (avg + p95)
-# ==========================================================
-def slowest_endpoints(db: Session, days: int = 7):
-    since = datetime.utcnow() - timedelta(days=days)
 
-    logs = db.query(Log).filter(
-        Log.timestamp >= since,
-        Log.response_time != None
-    ).all()
+# ==========================================================
+# SLOWEST ENDPOINTS
+# ==========================================================
+def slowest_endpoints(db: Session, days: int | None = None):
+
+    query = db.query(Log).filter(
+        Log.endpoint.isnot(None),
+        Log.response_time.isnot(None)
+    )
+
+    if days is not None:
+        since = datetime.utcnow() - timedelta(days=days)
+        query = query.filter(Log.timestamp >= since)
+
+    logs = query.all()
+
+    if not logs:
+        return []
 
     groups = defaultdict(list)
+
     for l in logs:
-        if l.endpoint:
-            groups[l.endpoint].append(l.response_time)
+        groups[l.endpoint].append(l.response_time)
 
     result = []
+
     for ep, vals in groups.items():
+        vals = [v for v in vals if v is not None]
         if not vals:
             continue
 
@@ -236,13 +229,19 @@ def slowest_endpoints(db: Session, days: int = 7):
 
 
 # ==========================================================
-# 4.5 — Error Trend Summary
+# ERROR TREND SUMMARY
 # ==========================================================
-def error_trend_summary(db: Session, days: int = 7):
-    since = datetime.utcnow() - timedelta(days=days)
-    logs = db.query(Log).filter(Log.timestamp >= since).all()
+def error_trend_summary(db: Session, days: int | None = None):
 
+    query = db.query(Log)
+
+    if days is not None:
+        since = datetime.utcnow() - timedelta(days=days)
+        query = query.filter(Log.timestamp >= since)
+
+    logs = query.all()
     total = len(logs)
+
     if total == 0:
         return {
             "total_logs": 0,

@@ -2,8 +2,6 @@ import re
 from datetime import datetime
 from typing import List, Dict
 
-
-# FULL FORMAT (with IP + message)
 FULL_PATTERN = re.compile(
     r'(?P<timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)\s+'
     r'(?P<level>[A-Z]+)\s+'
@@ -13,7 +11,6 @@ FULL_PATTERN = re.compile(
     r'(?P<ip>\S+)\s+-\s+(?P<message>.*)'
 )
 
-# SHORT FORMAT (no IP, no message)
 SHORT_PATTERN = re.compile(
     r'(?P<timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)\s+'
     r'(?P<level>[A-Z]+)\s+'
@@ -22,11 +19,9 @@ SHORT_PATTERN = re.compile(
     r'(?P<response_time>[0-9.]+)$'
 )
 
-
 def parse_log_line(line: str) -> Dict | None:
     text = line.strip()
 
-    # 1️⃣ Full structured log
     m = FULL_PATTERN.match(text)
     if m:
         gd = m.groupdict()
@@ -40,7 +35,6 @@ def parse_log_line(line: str) -> Dict | None:
             "message": gd["message"],
         }
 
-    # 2️⃣ Short structured log
     m2 = SHORT_PATTERN.match(text)
     if m2:
         gd = m2.groupdict()
@@ -54,23 +48,21 @@ def parse_log_line(line: str) -> Dict | None:
             "message": None,
         }
 
-    # 3️⃣ Comment / ignorable line
     if text.startswith("#"):
         return None
 
-    # 4️⃣ Fallback garbage-safe parse
-    parts = text.split(" ", 3)
+    # SAFE fallback — will NOT crash
+    parts = text.split()
 
     return {
         "timestamp": datetime.utcnow(),
         "level": parts[1] if len(parts) > 1 else "INFO",
-        "endpoint": None,
+        "endpoint": parts[2] if len(parts) > 2 else None,
         "status": None,
         "response_time": None,
         "ip": None,
-        "message": parts[-1] if parts else text,
+        "message": " ".join(parts[3:]) if len(parts) > 3 else text,
     }
-
 
 def parse_log_file(text: str) -> List[Dict]:
     parsed = []

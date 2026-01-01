@@ -19,31 +19,25 @@ def daily_metrics(db: Session = Depends(get_db)):
 
 
 @router.get("/top-errors")
-def top_errors(
-    hours: int | None = None,
-    db: Session = Depends(get_db)
-):
-    return {
-        "data": get_top_errors(db, hours=hours)
-    }
-
+def top_errors(hours: int | None = None, db: Session = Depends(get_db)):
+    return get_top_errors(db, hours=hours)
 
 
 @router.get("/top-anomalies")
-def get_top_anomalies(db: Session = Depends(get_db)):
-    return top_anomaly_endpoints(db)
+def get_top_anomalies(days: int | None = None, db: Session = Depends(get_db)):
+    return top_anomaly_endpoints(db, days=days)
 
 
 @router.get("/slowest")
-def get_slowest(db: Session = Depends(get_db)):
-    return slowest_endpoints(db)
+def get_slowest(days: int | None = None, db: Session = Depends(get_db)):
+    return slowest_endpoints(db, days=days)
 
 
 @router.get("/downtime")
-def get_downtime(db: Session = Depends(get_db)):
-    return downtime_indicators(db)
+def get_downtime(hours: int | None = None, db: Session = Depends(get_db)):
+    return downtime_indicators(db, hours=hours)
 
 
 @router.get("/summary")
-def get_summary(db: Session = Depends(get_db)):
-    return error_trend_summary(db)
+def get_summary(days: int | None = None, db: Session = Depends(get_db)):
+    return error_trend_summary(db, days=days)

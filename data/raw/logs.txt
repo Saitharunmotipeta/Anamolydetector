@@ -1,0 +1,100 @@
+2026-01-01T17:18:08Z INFO /api/login 200 0.024 10.30.0.12 - Login OK
+2026-01-01T17:17:56Z INFO /ops/diagnostics 200 0.050 10.0.0.100 - System diagnostics triggered
+2026-01-01T17:18:05Z INFO /relay/marslink 200 0.007 172.16.9.20 - Relay ok
+2026-01-01T17:17:42Z INFO /sensor/upload 200 0.247 10.21.7.8 - Gyro data packet received
+2026-01-01T17:18:14Z INFO /api/search 200 0.070 127.0.0.1 - Search OK
+2026-01-01T17:18:06Z INFO /api/search 200 0.135 172.20.5.20 - Search OK
+2026-01-01T17:18:15Z INFO /api/search 200 0.181 10.21.7.8 - Search OK
+2026-01-01T17:17:48Z INFO /api/login 200 0.258 172.31.8.90 - Login OK
+2026-01-01T17:18:06Z INFO /compute/node 200 0.098 10.30.0.12 - GPU batch processed
+2026-01-01T17:18:08Z INFO /sensor/upload 200 0.167 172.16.9.20 - Gyro data packet received
+2026-01-01T17:18:07Z INFO /sensor/upload 200 0.117 172.31.8.90 - Gyro data packet received
+2026-01-01T17:18:16Z INFO /telemetry/ingest 200 0.141 10.21.3.4 - Stream heartbeat OK
+2026-01-01T17:17:48Z INFO /api/search 200 0.173 172.16.9.20 - Search OK
+2026-01-01T17:18:26Z INFO /api/login 200 0.105 10.0.0.100 - Login OK
+2026-01-01T17:18:19Z INFO /telemetry/ingest 200 0.065 192.168.1.10 - Stream heartbeat OK
+2026-01-01T17:18:22Z INFO /sensor/upload 200 0.104 172.20.5.20 - Gyro data packet received
+2026-01-01T17:17:44Z INFO /sensor/upload 200 0.084 10.0.0.100 - Gyro data packet received
+2026-01-01T17:17:44Z INFO /proc/fuel 200 0.141 172.20.5.20 - Fuel telemetry OK
+2026-01-01T17:17:47Z INFO /telemetry/ingest 200 0.092 192.168.55.12 - Stream heartbeat OK
+2026-01-01T17:17:51Z INFO /proc/fuel 200 0.131 10.21.3.4 - Fuel telemetry OK
+2026-01-01T17:17:59Z INFO /api/search 200 0.193 10.21.3.4 - Search OK
+2026-01-01T17:18:39Z INFO /crew/status 200 0.183 172.20.5.20 - Crew heartbeats OK
+2026-01-01T17:18:39Z INFO /telemetry/ingest 200 0.102 10.21.7.8 - Stream heartbeat OK
+2026-01-01T17:18:03Z INFO /api/search 200 0.057 10.21.3.4 - Search OK
+2026-01-01T17:18:21Z INFO /compute/node 200 0.151 172.31.8.90 - GPU batch processed
+2026-01-01T17:17:51Z INFO /api/search 200 0.074 10.30.0.12 - Search OK
+2026-01-01T17:18:16Z INFO /sensor/upload 200 0.101 10.21.7.8 - Gyro data packet received
+2026-01-01T17:18:46Z INFO /sensor/upload 200 0.265 172.16.9.20 - Gyro data packet received
+2026-01-01T17:18:40Z INFO /compute/node 200 0.046 172.16.9.20 - GPU batch processed
+2026-01-01T17:18:57Z INFO /telemetry/ingest 200 0.172 10.30.0.12 - Stream heartbeat OK
+2026-01-01T17:19:13Z INFO /telemetry/ingest 200 0.049 172.31.8.90 - Stream heartbeat OK
+2026-01-01T17:19:23Z INFO /ops/diagnostics 200 0.169 10.0.0.100 - System diagnostics triggered
+2026-01-01T17:19:13Z INFO /telemetry/ingest 200 0.126 172.16.9.20 - Stream heartbeat OK
+2026-01-01T17:19:27Z INFO /relay/marslink 200 0.131 172.16.9.20 - Relay ok
+2026-01-01T17:19:35Z INFO /telemetry/ingest 200 0.079 172.20.5.20 - Stream heartbeat OK
+2026-01-01T17:19:05Z INFO /compute/node 200 0.073 192.168.1.10 - GPU batch processed
+2026-01-01T17:19:14Z INFO /api/login 200 0.075 172.31.8.90 - Login OK
+2026-01-01T17:19:33Z INFO /sensor/upload 200 0.011 192.168.1.10 - Gyro data packet received
+2026-01-01T17:19:04Z INFO /api/search 200 0.136 192.168.55.12 - Search OK
+2026-01-01T17:18:57Z INFO /api/search 200 0.231 172.16.9.20 - Search OK
+2026-01-01T17:19:02Z INFO /proc/fuel 200 0.047 127.0.0.1 - Fuel telemetry OK
+2026-01-01T17:18:44Z INFO /api/search 200 0.073 10.30.0.12 - Search OK
+2026-01-01T17:19:33Z INFO /sensor/upload 200 0.146 172.20.5.20 - Gyro data packet received
+2026-01-01T17:18:44Z INFO /sensor/upload 200 0.104 10.21.7.8 - Gyro data packet received
+2026-01-01T17:18:52Z INFO /api/login 200 0.011 192.168.55.12 - Login OK
+2026-01-01T17:19:31Z INFO /api/login 200 0.175 10.21.7.8 - Login OK
+2026-01-01T17:18:53Z INFO /api/search 200 0.079 10.21.3.4 - Search OK
+2026-01-01T17:19:18Z INFO /sensor/upload 200 0.019 10.21.3.4 - Gyro data packet received
+2026-01-01T17:18:49Z ERROR /telemetry/ingest 400 3.116 192.168.55.12 - Lost sync / Relay timeout
+2026-01-01T17:20:30Z INFO /crew/status 200 0.187 10.21.3.4 - Crew heartbeats OK
+2026-01-01T17:20:10Z INFO /telemetry/ingest 200 0.008 172.31.8.90 - Stream heartbeat OK
+2026-01-01T17:19:45Z INFO /relay/marslink 200 0.073 172.20.5.20 - Relay ok
+2026-01-01T17:20:31Z INFO /telemetry/ingest 200 0.080 192.168.55.12 - Stream heartbeat OK
+2026-01-01T17:20:10Z INFO /proc/fuel 200 0.044 10.21.3.4 - Fuel telemetry OK
+2026-01-01T17:20:02Z INFO /api/login 200 0.137 172.16.9.20 - Login OK
+2026-01-01T17:20:27Z INFO /api/search 200 0.110 172.31.8.90 - Search OK
+2026-01-01T17:20:56Z INFO /api/search 200 0.146 10.0.0.100 - Search OK
+2026-01-01T17:21:21Z INFO /compute/node 200 0.063 192.168.55.12 - GPU batch processed
+2026-01-01T17:20:48Z INFO /crew/status 200 0.061 10.21.3.4 - Crew heartbeats OK
+2026-01-01T17:20:49Z INFO /api/search 200 0.124 10.21.7.8 - Search OK
+2026-01-01T17:21:31Z INFO /api/search 200 0.161 172.16.9.20 - Search OK
+2026-01-01T17:21:13Z INFO /proc/fuel 200 0.005 172.20.5.20 - Fuel telemetry OK
+2026-01-01T17:21:34Z INFO /api/search 200 0.195 10.30.0.12 - Search OK
+2026-01-01T17:21:31Z INFO /proc/fuel 200 0.080 10.21.3.4 - Fuel telemetry OK
+2026-01-01T17:20:57Z INFO /sensor/upload 200 0.121 172.16.9.20 - Gyro data packet received
+2026-01-01T17:20:52Z INFO /crew/status 200 0.099 127.0.0.1 - Crew heartbeats OK
+2026-01-01T17:21:04Z INFO /sensor/upload 200 0.159 172.20.5.20 - Gyro data packet received
+2026-01-01T17:21:29Z INFO /telemetry/ingest 200 0.139 192.168.1.10 - Stream heartbeat OK
+2026-01-01T17:20:47Z INFO /sensor/upload 200 0.191 10.0.0.100 - Gyro data packet received
+2026-01-01T17:20:46Z INFO /crew/status 200 0.137 192.168.55.12 - Crew heartbeats OK
+2026-01-01T17:21:32Z INFO /api/login 200 0.011 10.0.0.100 - Login OK
+2026-01-01T17:21:44Z INFO /api/search 200 0.205 172.20.5.20 - Search OK
+2026-01-01T17:21:47Z INFO /telemetry/ingest 200 0.049 10.21.3.4 - Stream heartbeat OK
+2026-01-01T17:21:45Z INFO /relay/marslink 200 0.155 10.21.7.8 - Relay ok
+2026-01-01T17:21:47Z INFO /telemetry/ingest 200 0.238 10.21.7.8 - Stream heartbeat OK
+2026-01-01T17:22:03Z INFO /ops/delete-task 200 0.036 10.21.7.8 - Task purge requested
+2026-01-01T17:21:58Z INFO /api/search 200 0.191 10.30.0.12 - Search OK
+2026-01-01T17:21:57Z INFO /api/search 200 0.015 172.16.9.20 - Search OK
+2026-01-01T17:22:37Z INFO /relay/marslink 200 0.089 127.0.0.1 - Relay ok
+2026-01-01T17:22:22Z INFO /telemetry/ingest 200 0.030 172.31.8.90 - Stream heartbeat OK
+2026-01-01T17:22:26Z INFO /api/search 200 0.244 10.21.3.4 - Search OK
+2026-01-01T17:22:21Z INFO /telemetry/ingest 200 0.149 10.30.0.12 - Stream heartbeat OK
+2026-01-01T17:22:21Z INFO /crew/status 200 0.219 192.168.55.12 - Crew heartbeats OK
+2026-01-01T17:22:33Z INFO /compute/node 200 0.186 172.20.5.20 - GPU batch processed
+2026-01-01T17:22:23Z INFO /api/login 200 0.187 10.21.7.8 - Login OK
+2026-01-01T17:23:13Z INFO /crew/status 200 0.173 10.21.7.8 - Crew heartbeats OK
+2026-01-01T17:23:12Z INFO /ops/delete-task 200 0.005 10.21.7.8 - Task purge requested
+2026-01-01T17:23:07Z INFO /telemetry/ingest 200 0.171 10.21.3.4 - Stream heartbeat OK
+2026-01-01T17:22:55Z INFO /telemetry/ingest 200 0.087 172.31.8.90 - Stream heartbeat OK
+2026-01-01T17:23:25Z INFO /telemetry/ingest 200 0.146 172.20.5.20 - Stream heartbeat OK
+2026-01-01T17:22:51Z INFO /crew/status 200 0.079 10.30.0.12 - Crew heartbeats OK
+2026-01-01T17:23:15Z INFO /compute/node 200 0.140 10.0.0.100 - GPU batch processed
+2026-01-01T17:22:44Z INFO /telemetry/ingest 200 0.034 127.0.0.1 - Stream heartbeat OK
+2026-01-01T17:23:12Z ERROR /telemetry/ingest 502 2.859 172.20.5.20 - Lost sync / Relay timeout
+2026-01-01T17:23:06Z INFO /telemetry/ingest 200 0.096 172.20.5.20 - Stream heartbeat OK
+2026-01-01T17:22:53Z INFO /api/search 200 0.072 192.168.1.10 - Search OK
+2026-01-01T17:22:56Z INFO /api/search 200 0.109 127.0.0.1 - Search OK
+2026-01-01T17:22:41Z INFO /sensor/upload 200 0.059 172.16.9.20 - Gyro data packet received
+2026-01-01T17:23:07Z INFO /sensor/upload 200 0.149 10.21.3.4 - Gyro data packet received
+2026-01-01T17:23:28Z INFO /api/search 200 0.105 10.21.7.8 - Search OK

@@ -1,8 +1,10 @@
 import os
+import json
 import requests
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from collections import Counter
+from sqlalchemy import desc
 
 from app.models.log import Log
 from app.models.anomaly import Anomaly
@@ -11,81 +13,82 @@ from app.models.metric import Metric
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "mistralai/mistral-7b-instruct")
 
+MAX_LOGS = 200
+MAX_ANOMALIES = 20
+MAX_ENDPOINTS = 10
+
+
+def _safe(v, default=None):
+    return v if v is not None else default
+
 
 # ==============================
-# HELPERS
+# DATA COLLECTORS (TOP ONLY)
 # ==============================
-def _safe(val, default=None):
-    return val if val is not None else default
-
-
-def _get_top_logs(db: Session, lookback_minutes=60, limit=20):
+def _get_top_logs(db: Session, lookback_minutes=180, limit=MAX_LOGS):
     since = datetime.utcnow() - timedelta(minutes=lookback_minutes)
 
     logs = (
         db.query(Log)
         .filter(Log.timestamp >= since)
-        .order_by(Log.timestamp.desc())
+        .order_by(desc(Log.timestamp))
         .all()
     )
 
-    # Prioritize ERROR + CRITICAL
-    critical_logs = [
+    errors = [
         l for l in logs
         if l.level and l.level.upper() in ("ERROR", "CRITICAL")
     ]
 
-    # If not enough, fill with WARN/INFO
-    if len(critical_logs) < limit:
-        critical_logs += logs[:limit - len(critical_logs)]
+    non_errors = [l for l in logs if l not in errors]
 
-    result = []
+    selected = (errors + non_errors)[:limit]
 
-    for l in critical_logs[:limit]:
-        result.append({
+    return [
+        {
             "timestamp": str(l.timestamp),
             "endpoint": _safe(l.endpoint),
             "level": _safe(l.level),
             "message": _safe(l.message),
             "response_time": _safe(l.response_time),
-            "ip": _safe(l.ip)
-        })
+            "ip": _safe(l.ip),
+        }
+        for l in selected
+    ]
 
-    return result
 
-
-def _get_top_anomalies(db: Session, limit=15):
+def _get_top_anomalies(db: Session, limit=MAX_ANOMALIES):
     anomalies = (
         db.query(Anomaly)
-        .order_by(Anomaly.timestamp.desc())
+        .order_by(desc(Anomaly.severity), desc(Anomaly.timestamp))
         .limit(limit)
         .all()
     )
 
-    results = []
-    for a in anomalies:
-        results.append({
+    return [
+        {
             "timestamp": str(a.timestamp),
             "type": a.type,
             "severity": a.severity,
             "message": a.message,
-            "score": a.score
-        })
-
-    return results
-
-
-def _get_top_error_endpoints(db: Session, hours=24, limit=10):
-    since = datetime.utcnow() - timedelta(hours=hours)
-
-    logs = db.query(Log).filter(Log.timestamp >= since).all()
-
-    errors = [
-        l.endpoint for l in logs
-        if l.endpoint and l.level and l.level.upper() in ("ERROR", "CRITICAL")
+            "score": a.score,
+        }
+        for a in anomalies
     ]
 
-    counter = Counter(errors)
+
+def _get_top_error_endpoints(db: Session, hours=24, limit=MAX_ENDPOINTS):
+    since = datetime.utcnow() - timedelta(hours=hours)
+
+    logs = (
+        db.query(Log)
+        .filter(Log.timestamp >= since)
+        .filter(Log.level.in_(["ERROR", "CRITICAL"]))
+        .filter(Log.endpoint.isnot(None))
+        .all()
+    )
+
+    counter = Counter([l.endpoint for l in logs])
 
     return [
         {"endpoint": ep, "error_count": count}
@@ -94,11 +97,7 @@ def _get_top_error_endpoints(db: Session, hours=24, limit=10):
 
 
 def _get_latest_metrics(db: Session):
-    m = (
-        db.query(Metric)
-        .order_by(Metric.timestamp.desc())
-        .first()
-    )
+    m = db.query(Metric).order_by(desc(Metric.timestamp)).first()
 
     if not m:
         return {}
@@ -112,8 +111,8 @@ def _get_latest_metrics(db: Session):
             "low": m.low,
             "medium": m.medium,
             "high": m.high,
-            "critical": m.critical
-        }
+            "critical": m.critical,
+        },
     }
 
 
@@ -131,7 +130,8 @@ def call_openrouter(messages):
     payload = {
         "model": OPENROUTER_MODEL,
         "messages": messages,
-        "temperature": 0.2
+        "temperature": 0.1,
+        "max_tokens": 800
     }
 
     resp = requests.post(url, json=payload, headers=headers)
@@ -144,64 +144,85 @@ def call_openrouter(messages):
     if "error" in data:
         return {"error": "api_error", "raw": data}
 
-    try:
-        return data["choices"][0]["message"]["content"]
-    except:
-        return {"error": "missing_choices", "raw": data}
+    return data.get("choices", [{}])[0].get("message", {}).get("content")
 
 
 # ==============================
-# MAIN RCA HANDLER
+# RCA MAIN
 # ==============================
 def run_root_cause_analysis(db: Session, testing: bool = False):
 
-    logs = _get_top_logs(db, lookback_minutes=180, limit=20)
-    anomalies = _get_top_anomalies(db, limit=15)
-    endpoints = _get_top_error_endpoints(db, hours=24, limit=10)
+    logs = _get_top_logs(db)
+    anomalies = _get_top_anomalies(db)
+    endpoints = _get_top_error_endpoints(db)
     metrics = _get_latest_metrics(db)
 
     context = {
         "top_logs": logs,
         "top_anomalies": anomalies,
         "top_error_endpoints": endpoints,
-        "latest_metrics": metrics
+        "latest_metrics": metrics,
     }
 
+    # ----------- Compact + cheaper token prompt -----------
     user_prompt = f"""
-You are an elite SRE.
+You are a world-class Site Reliability Engineer.
 
-Analyze the system based ONLY on:
-- top error logs
-- top anomalies
-- top failing endpoints
-- key metrics
+Analyze ONLY the following:
 
-Return STRICT JSON ONLY in this shape:
+{json.dumps(context)}
+
+Return STRICT JSON ONLY. NO TEXT. NO MARKDOWN.
+ALWAYS follow this format:
 
 {{
  "root_cause": "...",
  "impact": "...",
  "affected_endpoints": ["..."],
- "recommended_actions": ["...", "..."],
+ "recommended_actions": ["..."],
  "risk_level": "low|medium|high|critical",
- "confidence": 0.0 to 1.0
+ "confidence": 0.0
 }}
-
-Here is the data:
-
-{context}
 """
 
     result = call_openrouter([
-        {"role": "system", "content": "You are a world-class site reliability engineer."},
-        {"role": "user", "content": user_prompt}
+        {"role": "system", "content": "Return JSON only. Never add commentary."},
+        {"role": "user", "content": user_prompt},
     ])
 
-    if isinstance(result, dict) and "error" in result:
-        return {"status": "failed", "error": result}
+    # ======================
+    # HARD JSON PARSE
+    # ======================
+    try:
+        parsed = json.loads(result)
+    except Exception:
+        return {
+            "status": "failed_parse",
+            "raw": result,
+            "context_used": context
+        }
+
+    # ======================
+    # VALIDATE REQUIRED FIELDS
+    # ======================
+    required = [
+        "root_cause",
+        "impact",
+        "affected_endpoints",
+        "recommended_actions",
+        "risk_level",
+        "confidence",
+    ]
+
+    if not all(k in parsed for k in required):
+        return {
+            "status": "invalid_shape",
+            "rca": parsed,
+            "context_used": context
+        }
 
     return {
         "status": "ok",
-        "rca": result,
-        "context_used": context
+        "rca": parsed,
+        "context_used": context,
     }

@@ -93,3 +93,7 @@ data/raw/*.csv
 # General archives
 *.zip
 *.log
+
+frontend/app/upload/page.tsx
+frontend/package-lock.json
+node_modules
