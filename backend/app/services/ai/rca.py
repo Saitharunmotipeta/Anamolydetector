@@ -1,82 +1,126 @@
 import os
 import requests
+from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
+from collections import Counter
+
 from app.models.log import Log
 from app.models.anomaly import Anomaly
 from app.models.metric import Metric
-from datetime import datetime, timedelta
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "mistralai/mistral-7b-instruct")
 
 
-def _metric_to_dict(m: Metric):
-    return {
-        "timestamp": str(m.timestamp),
-        "total_logs": m.total_logs,
-        "error_count": m.error_count,
-        "avg_response_time": m.avg_response_time,
-        "low": m.low,
-        "medium": m.medium,
-        "high": m.high,
-        "critical": m.critical,
-    }
+# ==============================
+# HELPERS
+# ==============================
+def _safe(val, default=None):
+    return val if val is not None else default
 
 
-def _format_context(
-    db: Session,
-    testing: bool = False,
-    lookback_minutes: int = 60
-):
-    if testing:
-        logs = db.query(Log).order_by(Log.timestamp.asc()).all()
-    else:
-        since = datetime.utcnow() - timedelta(minutes=lookback_minutes)
-        logs = (
-            db.query(Log)
-            .filter(Log.timestamp >= since)
-            .order_by(Log.timestamp.asc())
-            .all()
-        )
+def _get_top_logs(db: Session, lookback_minutes=60, limit=20):
+    since = datetime.utcnow() - timedelta(minutes=lookback_minutes)
 
-    anomalies = (
-        db.query(Anomaly)
-        .order_by(Anomaly.timestamp.desc())
-        .limit(50)
+    logs = (
+        db.query(Log)
+        .filter(Log.timestamp >= since)
+        .order_by(Log.timestamp.desc())
         .all()
     )
 
-    metric = (
+    # Prioritize ERROR + CRITICAL
+    critical_logs = [
+        l for l in logs
+        if l.level and l.level.upper() in ("ERROR", "CRITICAL")
+    ]
+
+    # If not enough, fill with WARN/INFO
+    if len(critical_logs) < limit:
+        critical_logs += logs[:limit - len(critical_logs)]
+
+    result = []
+
+    for l in critical_logs[:limit]:
+        result.append({
+            "timestamp": str(l.timestamp),
+            "endpoint": _safe(l.endpoint),
+            "level": _safe(l.level),
+            "message": _safe(l.message),
+            "response_time": _safe(l.response_time),
+            "ip": _safe(l.ip)
+        })
+
+    return result
+
+
+def _get_top_anomalies(db: Session, limit=15):
+    anomalies = (
+        db.query(Anomaly)
+        .order_by(Anomaly.timestamp.desc())
+        .limit(limit)
+        .all()
+    )
+
+    results = []
+    for a in anomalies:
+        results.append({
+            "timestamp": str(a.timestamp),
+            "type": a.type,
+            "severity": a.severity,
+            "message": a.message,
+            "score": a.score
+        })
+
+    return results
+
+
+def _get_top_error_endpoints(db: Session, hours=24, limit=10):
+    since = datetime.utcnow() - timedelta(hours=hours)
+
+    logs = db.query(Log).filter(Log.timestamp >= since).all()
+
+    errors = [
+        l.endpoint for l in logs
+        if l.endpoint and l.level and l.level.upper() in ("ERROR", "CRITICAL")
+    ]
+
+    counter = Counter(errors)
+
+    return [
+        {"endpoint": ep, "error_count": count}
+        for ep, count in counter.most_common(limit)
+    ]
+
+
+def _get_latest_metrics(db: Session):
+    m = (
         db.query(Metric)
         .order_by(Metric.timestamp.desc())
         .first()
     )
 
-    ctx_logs = "\n".join(
-        f"[{l.timestamp}] {l.level} {l.endpoint} - {l.message}"
-        for l in logs
-    )
+    if not m:
+        return {}
 
-    ctx_anomalies = "\n".join(
-        f"[{a.timestamp}] {a.type} ({a.severity}) - {a.message}"
-        for a in anomalies
-    )
-
-    ctx_metric = _metric_to_dict(metric) if metric else {}
-
-    return f"""
-### LOGS
-{ctx_logs}
-
-### ANOMALIES
-{ctx_anomalies}
-
-### METRICS
-{ctx_metric}
-"""
+    return {
+        "timestamp": str(m.timestamp),
+        "total_logs": m.total_logs,
+        "error_count": m.error_count,
+        "avg_response_time": m.avg_response_time,
+        "severity": {
+            "low": m.low,
+            "medium": m.medium,
+            "high": m.high,
+            "critical": m.critical
+        }
+    }
 
 
-def call_openrouter(prompt: str):
+# ==============================
+# OPENROUTER CALL
+# ==============================
+def call_openrouter(messages):
     url = "https://openrouter.ai/api/v1/chat/completions"
 
     headers = {
@@ -84,79 +128,80 @@ def call_openrouter(prompt: str):
         "Content-Type": "application/json",
     }
 
-    data = {
+    payload = {
         "model": OPENROUTER_MODEL,
-        "messages": [
-            {"role": "system", "content": "You are an expert SRE and observability engineer."},
-            {"role": "user", "content": prompt}
-        ],
+        "messages": messages,
+        "temperature": 0.2
     }
 
-    resp = requests.post(url, json=data, headers=headers)
+    resp = requests.post(url, json=payload, headers=headers)
 
     try:
-        result = resp.json()
+        data = resp.json()
     except:
-        return {"error": "Invalid JSON response", "raw": resp.text}
+        return {"error": "invalid_json", "raw": resp.text}
 
-    if "error" in result:
-        return {"error": "OpenRouter returned an error", "raw": result}
+    if "error" in data:
+        return {"error": "api_error", "raw": data}
 
     try:
-        return result["choices"][0]["message"]["content"]
-    except Exception:
-        return {"error": "Missing 'choices' key", "raw": result}
+        return data["choices"][0]["message"]["content"]
+    except:
+        return {"error": "missing_choices", "raw": data}
 
 
-def run_root_cause_analysis(
-    db: Session,
-    testing: bool = False
-):
-    context = _format_context(db, testing=testing)
+# ==============================
+# MAIN RCA HANDLER
+# ==============================
+def run_root_cause_analysis(db: Session, testing: bool = False):
 
-    prompt = """
-You are an advanced SRE / Observability Engineer.
-Analyze the system health based on logs, anomalies, and metrics.
+    logs = _get_top_logs(db, lookback_minutes=180, limit=20)
+    anomalies = _get_top_anomalies(db, limit=15)
+    endpoints = _get_top_error_endpoints(db, hours=24, limit=10)
+    metrics = _get_latest_metrics(db)
 
-### TASKS
-1. Identify the most likely root cause.
-2. Explain why it happened.
-3. Describe which endpoints/users are affected.
-4. Provide recommended remediation steps.
-5. Include a confidence score (0–1).
-6. Keep the response under 250 words.
+    context = {
+        "top_logs": logs,
+        "top_anomalies": anomalies,
+        "top_error_endpoints": endpoints,
+        "latest_metrics": metrics
+    }
 
-### DATA
-{context}
+    user_prompt = f"""
+You are an elite SRE.
 
-Return a JSON-like structure EXACTLY like this:
+Analyze the system based ONLY on:
+- top error logs
+- top anomalies
+- top failing endpoints
+- key metrics
+
+Return STRICT JSON ONLY in this shape:
 
 {{
-  "root_cause": "...",
-  "impact": "...",
-  "affected_endpoints": ["..."],
-  "recommendations": ["..."],
-  "confidence": 0.8
+ "root_cause": "...",
+ "impact": "...",
+ "affected_endpoints": ["..."],
+ "recommended_actions": ["...", "..."],
+ "risk_level": "low|medium|high|critical",
+ "confidence": 0.0 to 1.0
 }}
-""".format(context=context)
 
-    result = call_openrouter(prompt)
+Here is the data:
+
+{context}
+"""
+
+    result = call_openrouter([
+        {"role": "system", "content": "You are a world-class site reliability engineer."},
+        {"role": "user", "content": user_prompt}
+    ])
 
     if isinstance(result, dict) and "error" in result:
-        return result
+        return {"status": "failed", "error": result}
 
-    if not result or str(result).strip() == "":
-        retry_prompt = prompt + "\nSTRICT MODE: Provide meaningful analysis even if data is limited."
-        result_retry = call_openrouter(retry_prompt)
-
-        if not result_retry or str(result_retry).strip() == "":
-            return {
-                "error": "LLM returned empty output twice",
-                "note": "Try using claude-3.5-haiku or reduce context size."
-            }
-
-        return {"analysis": result_retry}
-
-    return {"analysis": result}
-
-
+    return {
+        "status": "ok",
+        "rca": result,
+        "context_used": context
+    }

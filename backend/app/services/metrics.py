@@ -24,13 +24,17 @@ def aggregate_metrics(db: Session, days: int = 7):
 
     if total == 0:
         return {
-            "total_logs": 0,
-            "error_count": 0,
-            "avg_response_time": 0,
-            "error_rate": 0,
-            "severity": {k: 0 for k in SEVERITY_KEYS},
+        "total_logs": 0,
+        "error_count": 0,
+        "avg_response_time": 0.0,
+        "error_rate": 0.0,
+        "severity": {
+            "low": 0,
+            "medium": 0,
+            "high": 0,
+            "critical": 0
         }
-
+    }
     # classify errors
     errors = [
         l for l in logs
