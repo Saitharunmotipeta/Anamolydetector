@@ -12,3 +12,7 @@ class Anomaly(Base):
     severity = Column(String)
     message = Column(String)
     log_id = Column(Integer, nullable=True)
+<<<<<<< HEAD
+=======
+
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660

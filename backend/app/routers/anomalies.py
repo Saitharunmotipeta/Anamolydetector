@@ -123,5 +123,9 @@ def predict_errors(
 # ---------------------------
 @router.post("/rca")
 def run_rca(testing: bool = False, db: Session = Depends(get_db)):
+<<<<<<< HEAD
     result = run_root_cause_analysis(db)
+=======
+    result = run_root_cause_analysis(db, testing=testing)
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
     return {"status": "ok", "result": result}

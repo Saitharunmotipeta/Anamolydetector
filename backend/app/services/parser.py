@@ -2,6 +2,10 @@ import re
 from datetime import datetime
 from typing import List, Dict
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
 # FULL FORMAT (with IP + message)
 FULL_PATTERN = re.compile(
     r'(?P<timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)\s+'
@@ -21,10 +25,18 @@ SHORT_PATTERN = re.compile(
     r'(?P<response_time>[0-9.]+)$'
 )
 
+<<<<<<< HEAD
 def parse_log_line(line: str) -> Dict:
     text = line.strip()
 
     # 1️⃣ Try full match
+=======
+
+def parse_log_line(line: str) -> Dict | None:
+    text = line.strip()
+
+    # 1️⃣ Full structured log
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
     m = FULL_PATTERN.match(text)
     if m:
         gd = m.groupdict()
@@ -38,7 +50,11 @@ def parse_log_line(line: str) -> Dict:
             "message": gd["message"],
         }
 
+<<<<<<< HEAD
     # 2️⃣ Try short match
+=======
+    # 2️⃣ Short structured log
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
     m2 = SHORT_PATTERN.match(text)
     if m2:
         gd = m2.groupdict()
@@ -52,11 +68,21 @@ def parse_log_line(line: str) -> Dict:
             "message": None,
         }
 
+<<<<<<< HEAD
     # 3️⃣ Fallback (garbage or comment lines)
     if text.startswith("#"):
         return None  # skip comment lines
 
     parts = text.split(" ", 3)
+=======
+    # 3️⃣ Comment / ignorable line
+    if text.startswith("#"):
+        return None
+
+    # 4️⃣ Fallback garbage-safe parse
+    parts = text.split(" ", 3)
+
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
     return {
         "timestamp": datetime.utcnow(),
         "level": parts[1] if len(parts) > 1 else "INFO",
@@ -70,10 +96,22 @@ def parse_log_line(line: str) -> Dict:
 
 def parse_log_file(text: str) -> List[Dict]:
     parsed = []
+<<<<<<< HEAD
     for line in text.splitlines():
         if not line.strip():
             continue
         item = parse_log_line(line)
         if item:
             parsed.append(item)
+=======
+
+    for line in text.splitlines():
+        if not line.strip():
+            continue
+
+        item = parse_log_line(line)
+        if item:
+            parsed.append(item)
+
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
     return parsed

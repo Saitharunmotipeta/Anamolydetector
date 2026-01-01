@@ -19,9 +19,19 @@ def daily_metrics(db: Session = Depends(get_db)):
 
 
 @router.get("/top-errors")
+<<<<<<< HEAD
 def top_errors(db: Session = Depends(get_db)):
     from app.services.metrics import get_top_errors
     return get_top_errors(db)
+=======
+def top_errors(
+    hours: int | None = None,
+    db: Session = Depends(get_db)
+):
+    return {
+        "data": get_top_errors(db, hours=hours)
+    }
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
 
 
 

@@ -1,7 +1,10 @@
 import os
 import requests
+<<<<<<< HEAD
 import json
 import re
+=======
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from collections import Counter
@@ -119,6 +122,7 @@ def _get_latest_metrics(db: Session):
     }
 
 
+<<<<<<< HEAD
 def _extract_json(text: str):
     """
     Extract first valid JSON object from model output.
@@ -138,6 +142,8 @@ def _extract_json(text: str):
     return None
 
 
+=======
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
 # ==============================
 # OPENROUTER CALL
 # ==============================
@@ -197,9 +203,13 @@ Analyze the system based ONLY on:
 - top failing endpoints
 - key metrics
 
+<<<<<<< HEAD
 Return STRICT JSON ONLY.
 Do NOT add explanations, markdown, or extra text.
 Return exactly this JSON shape:
+=======
+Return STRICT JSON ONLY in this shape:
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
 
 {{
  "root_cause": "...",
@@ -223,6 +233,7 @@ Here is the data:
     if isinstance(result, dict) and "error" in result:
         return {"status": "failed", "error": result}
 
+<<<<<<< HEAD
     parsed_rca = _extract_json(result)
 
     if not parsed_rca:
@@ -238,3 +249,10 @@ Here is the data:
         "rca": parsed_rca,
         "context_used": context
     }
+=======
+    return {
+        "status": "ok",
+        "rca": result,
+        "context_used": context
+    }
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660

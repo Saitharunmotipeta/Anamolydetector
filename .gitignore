@@ -92,4 +92,8 @@ data/raw/*.csv
 
 # General archives
 *.zip
+<<<<<<< HEAD
 *.log
+=======
+*.log
+>>>>>>> f58c6c11b8e6116f90a1fbd213462af7722cd660
