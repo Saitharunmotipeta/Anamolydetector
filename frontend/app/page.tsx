@@ -170,7 +170,11 @@ export default function HomePage() {
 
           {/* IMAGE PLACEHOLDER */}
           <div className="h-[420px] rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center text-slate-400 text-sm">
-            Graphs: Bar Chart / Line Chart / Pie Chart
+            <img
+                src="/graph.jpg"
+                alt="System Architecture Diagram"
+                className="h-full w-full object-contain"
+              />
           </div>
         </div>
       </section>

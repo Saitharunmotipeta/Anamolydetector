@@ -65,7 +65,7 @@ def aggregate_metrics(db: Session, days: int | None = None):
 # ==========================================================
 # TOP ERROR ENDPOINTS
 # ==========================================================
-def get_top_errors(db: Session, hours: int | None = None, limit: int = 10):
+def get_top_errors(db: Session, hours: int, limit: int = 100):
 
     query = db.query(
         Log.endpoint,

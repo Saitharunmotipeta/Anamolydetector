@@ -49,7 +49,9 @@ export default function MetricsPage() {
       try {
         const [d, e, a, s] = await Promise.all([
           api.get("/metrics/daily"),
-          api.get("/metrics/top-errors"),
+          api.get("/metrics/top-errors", {
+              params: { hours: 2 }
+            }),
           api.get("/metrics/top-anomalies"),
           api.get("/metrics/slowest"),
         ]);
@@ -57,11 +59,11 @@ export default function MetricsPage() {
         setDaily(d.data);
 
         setTopErrors(
-          Array.isArray(e.data?.data)
-            ? e.data.data
+          Array.isArray(e.data)
+            ? e.data
             : []
         );
-
+        
         setAnomalies(
           Array.isArray(a.data) ? a.data : []
         );
@@ -121,8 +123,8 @@ export default function MetricsPage() {
 
             <Card title="Top Error Endpoints">
               {topErrors.length ? (
-                <table className="w-full text-sm">
-                  <thead className="text-slate-500 border-b">
+                <table className="w-full text-sm text-black">
+                  <thead className="text-slate-500">
                     <tr>
                       <th className="py-2 text-left">Endpoint</th>
                       <th className="text-left">Errors</th>
@@ -132,7 +134,7 @@ export default function MetricsPage() {
 
                   <tbody>
                     {topErrors.map((e, i) => (
-                      <tr key={i} className="border-b last:border-0">
+                      <tr key={i} className="last:border-0">
                         <td className="py-2 font-mono">{e.endpoint}</td>
                         <td>{e.error_count}</td>
                         <td>{(e.error_percent * 100).toFixed(2)}%</td>
@@ -148,7 +150,7 @@ export default function MetricsPage() {
             <Card title="Slowest Endpoints">
               {slowest.length ? (
                 slowest.map((s, i) => (
-                  <div key={i} className="flex justify-between py-2 border-b last:border-0">
+                  <div key={i} className="flex justify-between py-2 last:border-0 text-black">
                     <span className="font-mono">{s.endpoint}</span>
                     <span>{s.avg} ms (p95)</span>
                   </div>
@@ -163,7 +165,7 @@ export default function MetricsPage() {
           <Card title="Frequent Anomaly Types">
             {anomalies.length ? (
               anomalies.map((a, i) => (
-                <div key={i} className="flex justify-between py-2 border-b last:border-0">
+                <div key={i} className="flex justify-between py-2 text-black">
                   <span>{a.type}</span>
                   <span className="font-medium">{a.count}</span>
                 </div>

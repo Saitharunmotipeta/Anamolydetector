@@ -40,7 +40,7 @@ export default function UploadPage() {
         <div className="flex justify-center">
           <div className="w-full max-w-md h-[420px] rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 flex items-center justify-center">
             <img
-              src="/placeholders/upload-illustration.png"
+              src="/upload.gif"
               alt="Upload Logs Illustration"
               className="w-full h-full object-contain"
             />

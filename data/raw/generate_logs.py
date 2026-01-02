@@ -158,7 +158,7 @@ def generate_logs(start_ts, lines=50, out_path="logs.txt",
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--lines", type=int, default=100)
+    parser.add_argument("--lines", type=int, default=1000)
     parser.add_argument("--out", "--outpath", dest="out", default="logs.txt")
     args = parser.parse_args()
 
