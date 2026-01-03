@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const COLORS = ["#4ade80", "#facc15", "#fb923c", "#f87171"];
+const COLORS = ["blue", "green", "yellow", "red"];
 
 export default function SeverityPie({ data }: { data: any[] }) {
   if (!data || data.length === 0) return <p>No data available</p>;
